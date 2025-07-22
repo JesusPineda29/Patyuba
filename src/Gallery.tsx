@@ -2,55 +2,7 @@
 import { Heart, Eye, Share2 } from 'lucide-react';
 
 const Gallery = () => {
-  const galleryItems = [
-    {
-      id: 1,
-      title: "Paisaje Natural",
-      description: "Una hermosa vista panorámica",
-      image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=800&fit=crop",
-      color: "from-green-400 to-green-600",
-      size: "tall"
-    },
-    {
-      id: 2,
-      title: "Arquitectura Moderna",
-      description: "Diseño contemporáneo único",
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=400&fit=crop",
-      color: "from-blue-400 to-blue-600",
-      size: "wide"
-    },
-    {
-      id: 3,
-      title: "Arte Digital",
-      description: "Creatividad sin límites",
-      image: "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=400&h=600&fit=crop",
-      color: "from-red-400 to-red-600",
-      size: "medium"
-    },
-    {
-      id: 4,
-      title: "Retrato Urbano",
-      description: "La vida en la ciudad",
-      image: "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=400&h=500&fit=crop",
-      color: "from-orange-400 to-orange-600",
-      size: "tall-small"
-    }
-  ];
 
-  const getSizeClasses = (size) => {
-    switch (size) {
-      case 'tall':
-        return 'row-span-2 h-96';
-      case 'wide':
-        return 'col-span-2 h-48';
-      case 'medium':
-        return 'h-64';
-      case 'tall-small':
-        return 'row-span-1 h-80';
-      default:
-        return 'h-48';
-    }
-  };
 
   return (
     <div className="min-h-screen bg-gray-900 p-8">
@@ -198,5 +150,8 @@ const Gallery = () => {
     </div>
   );
 };
+
+
+
 
 export default Gallery;
