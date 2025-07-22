@@ -29,9 +29,9 @@ const ImprovedSections = () => {
               </div>
               
               <p className="text-xl text-gray-600 leading-relaxed">
-                Somos una empresa mexicana comprometida con ofrecerte la 
+                Empresa mexicana que busca ofrecerte la
                 <span className="font-semibold text-gray-800"> mejor calidad </span>
-                en productos alimenticios, combinando tradición e innovación.
+                en productos dentro de la rama alimenticia.
               </p>
               
               <div className="flex items-center space-x-2 text-green-700">
