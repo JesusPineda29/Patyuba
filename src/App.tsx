@@ -1,9 +1,9 @@
 
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import HeroCarousel from './carrucel';
 import ImprovedHeader from './Header';
 import ImprovedSections from './Somos';
 import SimpleCarousel from './2carrucel';
+import Footer from './Footer';
 
 function App() {
   return (
@@ -11,16 +11,16 @@ function App() {
       {/* Header */}
 
 
-      <ImprovedHeader/>
+      <ImprovedHeader />
 
       {/* Hero Section */}
       <HeroCarousel />
 
 
-      <ImprovedSections/>
+      <ImprovedSections />
 
       {/* Products Carousel */}
-<SimpleCarousel/>
+      <SimpleCarousel />
 
       {/* Bottom Section */}
       <section className="bg-gray-100 py-16">
@@ -45,6 +45,7 @@ function App() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

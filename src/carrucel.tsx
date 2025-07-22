@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle, Palette, Users, Award } from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle} from 'lucide-react';
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
