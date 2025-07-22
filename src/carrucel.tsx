@@ -13,7 +13,7 @@ const HeroCarousel = () => {
       subtitle: "Comercializadora PATYUBA se lo brinda",
       description: "Tu proveedor confiable de materias primas PATO",
       highlight: "Calidad y cumplimiento garantizados",
-      bgGradient: "from-blue-600 via-purple-600 to-pink-600",
+      backgroundImage: "/redhero.jpeg",
       buttonText: "Conoce nuestros productos"
     },
     {
@@ -22,7 +22,7 @@ const HeroCarousel = () => {
       subtitle: "Transformando industrias",
       description: "Experiencia y confianza en cada entrega",
       highlight: "Socios estratégicos de tu éxito",
-      bgGradient: "from-emerald-600 via-teal-600 to-cyan-600",
+      backgroundImage: "/yellowhero.jpeg",
       buttonText: "Nuestra experiencia"
     },
     {
@@ -31,7 +31,7 @@ const HeroCarousel = () => {
       subtitle: "Para cada cliente",
       description: "Soluciones adaptadas a tus necesidades",
       highlight: "Asesoría técnica especializada",
-      bgGradient: "from-orange-400 via-red-400 to-rose-400",
+      backgroundImage: "bluehero.jpeg",
       buttonText: "Contáctanos"
     }
   ];
@@ -73,36 +73,23 @@ const HeroCarousel = () => {
   }, []);
 
   return (
-    <section className="relative h-screen">
-      {/* Animated background with smooth transitions */}
+    <section className="relative h-screen overflow-hidden" id="inicio">
+      {/* Background images with smooth transitions */}
       <div className="absolute inset-0">
-        <div 
-          className={`absolute inset-0 bg-gradient-to-br ${slides[currentSlide].bgGradient} transition-all duration-1000 ease-in-out`}
-        >
-          {/* Animated background elements */}
-          <div className="absolute inset-0">
-            {/* Floating circles with enhanced animations */}
-            <div className="absolute top-40 right-32 w-24 h-24 bg-white/20 rounded-full blur-lg animate-bounce" style={{ animationDelay: '0.1s' }}></div>
-            <div className="absolute top-10 right-10 w-20 h-20 bg-white/15 rounded-full blur-lg animate-bounce" style={{ animationDelay: '0.2s' }}></div>
-            <div className="absolute bottom-16 left-1/2 w-28 h-28 bg-white/10 rounded-full blur-xl animate-bounce" style={{ animationDelay: '0.3s' }}></div>
-            <div className="absolute top-1/3 left-10 w-20 h-20 bg-white/20 rounded-full blur-md animate-bounce" style={{ animationDelay: '0.4s' }}></div>
-            <div className="absolute bottom-24 right-20 w-24 h-24 bg-white/10 rounded-full blur-lg animate-bounce" style={{ animationDelay: '0.5s' }}></div>
-            <div className="absolute top-24 left-1/2 w-16 h-16 bg-white/25 rounded-full blur-md animate-bounce" style={{ animationDelay: '0.6s' }}></div>
-            <div className="absolute bottom-10 left-10 w-20 h-20 bg-white/15 rounded-full blur-lg animate-bounce" style={{ animationDelay: '0.7s' }}></div>
-            <div className="absolute top-1/4 right-1/4 w-28 h-28 bg-white/10 rounded-full blur-xl animate-bounce" style={{ animationDelay: '0.8s' }}></div>
-            <div className="absolute bottom-1/3 right-1/2 w-16 h-16 bg-white/20 rounded-full blur-md animate-bounce" style={{ animationDelay: '0.9s' }}></div>
-            <div className="absolute top-12 left-1/4 w-24 h-24 bg-white/10 rounded-full blur-lg animate-bounce" style={{ animationDelay: '1s' }}></div>
+        {slides.map((slide, index) => (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
+              index === currentSlide ? 'opacity-100' : 'opacity-0'
+            }`}
+            style={{
+              backgroundImage: `url(${slide.backgroundImage})`,
+            }}
+          >
+            {/* Dark overlay for better text readability */}
 
-            {/* Grid pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="grid grid-cols-12 gap-4 h-full">
-                {Array.from({ length: 48 }, (_, i) => (
-                  <div key={i} className="border border-white/10"></div>
-                ))}
-              </div>
-            </div>
           </div>
-        </div>
+        ))}
       </div>
 
       {/* Content with sliding animations */}
@@ -110,7 +97,7 @@ const HeroCarousel = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             
-            {/* Text content with real slide animations - SIN OVERFLOW HIDDEN */}
+            {/* Text content with real slide animations */}
             <div className="text-white relative">
               
               <h1 className="text-6xl lg:text-7xl font-bold mb-6 leading-tight">
@@ -165,7 +152,7 @@ const HeroCarousel = () => {
               </button>
             </div>
 
-            {/* Visual element with slide animations - SIN OVERFLOW HIDDEN */}
+            {/* Visual element with slide animations */}
             <div className="hidden lg:block relative">
               <div className={`relative w-full h-96 transition-all duration-700 ease-out ${
                 isTransitioning 
@@ -174,47 +161,7 @@ const HeroCarousel = () => {
                     : 'opacity-0 transform -translate-x-full'
                   : 'opacity-100 transform translate-x-0'
               }`} style={{ transitionDelay: '0.1s' }}>
-                {/* Animated cards with slide entrance */}
-                <div className="absolute inset-0">
-                  <div className={`absolute top-0 left-0 w-64 h-40 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30 transform transition-all duration-700 hover:rotate-3 hover:scale-105 ${
-                    isTransitioning 
-                      ? direction === 'next' 
-                        ? 'opacity-0 translate-x-full rotate-12' 
-                        : 'opacity-0 -translate-x-full rotate-12'
-                      : 'opacity-100 translate-x-0 rotate-6'
-                  }`} style={{ transitionDelay: '0.15s' }}>
-                    <div className="p-6">
-                      <CheckCircle className="w-8 h-8 text-white/80 mb-2 animate-pulse" />
-                      <p className="text-white/90 font-medium">Calidad Premium</p>
-                    </div>
-                  </div>
-                  
-                  <div className={`absolute top-20 right-0 w-64 h-40 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30 transform transition-all duration-700 hover:-rotate-3 hover:scale-105 ${
-                    isTransitioning 
-                      ? direction === 'next' 
-                        ? 'opacity-0 translate-x-full -rotate-12' 
-                        : 'opacity-0 -translate-x-full -rotate-12'
-                      : 'opacity-100 translate-x-0 -rotate-6'
-                  }`} style={{ transitionDelay: '0.2s' }}>
-                    <div className="p-6">
-                      <CheckCircle className="w-8 h-8 text-white/80 mb-2 animate-pulse" style={{ animationDelay: '0.2s' }} />
-                      <p className="text-white/90 font-medium">Entrega Garantizada</p>
-                    </div>
-                  </div>
-                  
-                  <div className={`absolute bottom-0 left-8 w-64 h-40 bg-white/20 backdrop-blur-sm rounded-2xl border border-white/30 transform transition-all duration-700 hover:rotate-0 hover:scale-105 ${
-                    isTransitioning 
-                      ? direction === 'next' 
-                        ? 'opacity-0 translate-x-full rotate-9' 
-                        : 'opacity-0 -translate-x-full rotate-9'
-                      : 'opacity-100 translate-x-0 rotate-3'
-                  }`} style={{ transitionDelay: '0.25s' }}>
-                    <div className="p-6">
-                      <CheckCircle className="w-8 h-8 text-white/80 mb-2 animate-pulse" style={{ animationDelay: '0.4s' }} />
-                      <p className="text-white/90 font-medium">Soporte Técnico</p>
-                    </div>
-                  </div>
-                </div>
+                {/* Aquí puedes agregar contenido adicional si lo necesitas */}
               </div>
             </div>
           </div>
