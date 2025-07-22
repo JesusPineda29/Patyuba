@@ -104,10 +104,7 @@ const ImprovedSections = () => {
           <div className="space-y-12">
             {/* Title with gradient text */}
             <div className="space-y-6">
-              <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm text-white px-6 py-3 rounded-full text-sm font-medium border border-white/20">
-                <Package className="w-4 h-4" />
-                <span>Catálogo Premium</span>
-              </div>
+
               
               <h2 className="text-6xl font-bold leading-tight">
                 <span className="text-white">Conoce</span>

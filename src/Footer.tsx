@@ -12,8 +12,6 @@ const Footer: React.FC = () => {
           <h2 className="text-lg font-semibold">PAT-YUBA</h2>
           <div className="flex space-x-2">
             <img src="/star-blue.svg" alt="Estrella azul" className="w-10 h-10" />
-            <img src="/star-yellow.svg" alt="Estrella amarilla" className="w-10 h-10" />
-            <img src="/star-pink.svg" alt="Estrella rosa" className="w-10 h-10" />
           </div>
         </div>
 

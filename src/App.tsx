@@ -4,6 +4,7 @@ import ImprovedHeader from './Header';
 import ImprovedSections from './Somos';
 import SimpleCarousel from './2carrucel';
 import Footer from './Footer';
+import Gallery from './Gallery';
 
 function App() {
   return (
@@ -45,6 +46,7 @@ function App() {
           </div>
         </div>
       </section>
+      <Gallery />
       <Footer />
     </div>
   );
