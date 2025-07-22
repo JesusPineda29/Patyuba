@@ -5,16 +5,15 @@ const Gallery = () => {
 
 
   return (
-    <div className="min-h-screen bg-gray-900 p-8">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-white mb-8 text-center">
-          Galería Interactiva
-        </h1>
+    <div className="min-h-screen bg-white p-8">
+
+
         
         <div className="grid grid-cols-4 gap-4 auto-rows-min">
           {/* Elemento Negro (columna 1, filas 1-3) */}
-          <div className="col-start-1 row-start-1 row-span-3 h-[544px] group cursor-pointer">
+          <div className="col-start-1 row-start-1 row-span-3 h-[800px] group cursor-pointer">
             <div className="relative w-full h-full bg-gradient-to-br from-gray-900 to-black rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-105 hover:-rotate-1 hover:shadow-3xl">
+    <img  src="/pizar.jpeg"   alt="imagen" className="w-full h-full object-cover"/>
               <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
               <div className="absolute inset-0 p-6 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                 <div>
@@ -90,29 +89,30 @@ const Gallery = () => {
           </div>
 
           {/* Elemento Naranja (columna 4, filas 2-3) */}
-          <div className="col-start-4 row-start-2 row-span-2 h-[344px] group cursor-pointer">
-            <div className="relative w-full h-full bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-105 hover:rotate-2 hover:shadow-3xl">
-              <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-              <div className="absolute inset-0 p-6 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">Atardecer Cálido</h3>
-                  <p className="text-white/80 text-sm">Colores que inspiran</p>
-                </div>
-                <div className="flex flex-col space-y-4">
-                  <button className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors w-fit">
-                    <Heart size={20} />
-                  </button>
-                  <button className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors w-fit">
-                    <Eye size={20} />
-                  </button>
-                  <button className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors w-fit">
-                    <Share2 size={20} />
-                  </button>
-                </div>
-              </div>
-              <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-yellow-400 to-red-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </div>
-          </div>
+
+<div className="col-start-4 row-start-2 row-span-2 h-[534px] group cursor-pointer">
+  <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-105 hover:rotate-2 hover:shadow-3xl">
+    <img  src="/pizar.jpeg"   alt="imagen" className="w-full h-full object-cover"/>
+    <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+    <div className="absolute inset-0 p-6 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+      <div>
+        <h3 className="text-2xl font-bold text-white mb-2">Atardecer Cálido</h3>
+        <p className="text-white/80 text-sm">Colores que inspiran</p>
+      </div>
+      <div className="flex space-x-4">
+        <button className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors">
+          <Heart size={20} />
+        </button>
+        <button className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors">
+          <Eye size={20} />
+        </button>
+        <button className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors">
+          <Share2 size={20} />
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 
           {/* Elemento Rojo (columnas 2-3, fila 3) */}
           <div className="col-start-2 col-span-2 row-start-3 h-48 group cursor-pointer">
@@ -140,14 +140,9 @@ const Gallery = () => {
           </div>
         </div>
 
-        {/* Texto informativo */}
-        <div className="text-center mt-12">
-          <p className="text-gray-400 text-lg">
-            Pasa el mouse sobre las tarjetas para ver las animaciones interactivas
-          </p>
-        </div>
+
       </div>
-    </div>
+
   );
 };
 

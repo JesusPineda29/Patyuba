@@ -48,7 +48,7 @@ function App() {
         </div>
       </section>
       <Gallery />
-      <Gallery2 />
+
       <Footer />
     </div>
   );
