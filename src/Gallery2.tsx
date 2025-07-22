@@ -30,7 +30,7 @@ const Gallery2 = () => {
       <div className="w-3/4 h-full flex flex-col">
         {/* Fila superior - Tarjeta Verde */}
         <div className="w-full h-1/3 flex">
-          <div className="w-full h-full bg-gradient-to-br from-green-400 to-green-600 group cursor-pointer relative overflow-hidden">
+          <div className="relative w-full h-full bg-gradient-to-br from-green-400 to-green-600 rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-500 hover:scale-105 hover:rotate-1 hover:shadow-3xl">
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
             <div className="absolute inset-0 p-8 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
               <div>
@@ -57,7 +57,7 @@ const Gallery2 = () => {
           {/* Columna izquierda de la fila inferior */}
           <div className="w-2/3 h-full flex flex-col">
             {/* Tarjeta Azul */}
-            <div className="w-full h-3/5 bg-gradient-to-br from-blue-400 to-blue-600 group cursor-pointer relative overflow-hidden">
+            <div className="w-full h-3/5 bg-gradient-to-br from-blue-400 to-blue-600 group cursor-pointer relative overflow-hidden rounded-2xl shadow-2xl transform transition-all duration-500 hover:scale-105 hover:-rotate-1 hover:shadow-3xl">
               <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
               <div className="absolute inset-0 p-8 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
                 <div>
