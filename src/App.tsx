@@ -1,11 +1,11 @@
 
-import HeroCarousel from './carrucel';
+import HeroCarousel from './carrusel';
 import ImprovedHeader from './Header';
 import ImprovedSections from './Somos';
 import SimpleCarousel from './2carrucel';
 import Footer from './Footer';
 import Gallery from './Gallery';
-import Gallery2 from './Gallery2';
+
 
 function App() {
   return (

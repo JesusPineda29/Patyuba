@@ -11,7 +11,7 @@ const ImprovedSections = () => {
           <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl"></div>
           <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-400 rounded-full blur-3xl"></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
@@ -27,18 +27,15 @@ const ImprovedSections = () => {
                   </span>
                 </h2>
               </div>
-              
+
               <p className="text-xl text-gray-600 leading-relaxed">
                 Empresa mexicana que busca ofrecerte la
                 <span className="font-semibold text-gray-800"> mejor calidad </span>
                 en productos dentro de la rama alimenticia.
               </p>
-              
-              <div className="flex items-center space-x-2 text-green-700">
-                <Leaf className="w-5 h-5" />
-                <span className="text-sm font-medium">100% Natural • Certificado • Sustentable</span>
-              </div>
-              
+
+
+
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
                   <Download className="w-5 h-5 group-hover:animate-bounce" />
@@ -50,7 +47,7 @@ const ImprovedSections = () => {
                 </button>
               </div>
             </div>
-            
+
             <div className="flex justify-center">
               <div className="space-y-6">
                 {/* Main logo container */}
@@ -63,19 +60,28 @@ const ImprovedSections = () => {
                     <span className="text-2xl font-bold text-gray-700">Tu Logo</span>
                   </div>
                 </div>
-                
+
                 {/* Small containers */}
                 <div className="flex space-x-4 justify-center">
                   <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-32 h-32 rounded-xl shadow-lg flex items-center justify-center text-white text-sm font-bold hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
                     <div className="text-center">
                       <Award className="w-6 h-6 mx-auto mb-2" />
-                      <span>Calidad</span>
+                      <p>
+                        <h3>MISION</h3>
+                        <span>Ofrecer materias primas con la mejor calidad y rapidez, ahorrando tiempo al cliente y respondiendo de forma ágil a sus necesidades urgentes.</span>
+                      </p>
+
                     </div>
                   </div>
                   <div className="bg-gradient-to-br from-green-500 to-green-600 w-32 h-32 rounded-xl shadow-lg flex items-center justify-center text-white text-sm font-bold hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
                     <div className="text-center">
                       <Leaf className="w-6 h-6 mx-auto mb-2" />
-                      <span>Natural</span>
+                      <p>
+                        <h3>VISION</h3>
+                        <span>Ser la comercializadora confiable y ágil de materias primas
+                          reconocida por su
+                          respuesta inmediata, atención al cliente y altos estándares de calidad.</span>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -93,19 +99,19 @@ const ImprovedSections = () => {
             <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-green-400 rounded-full blur-3xl animate-pulse delay-1000"></div>
           </div>
-          
+
           {/* Floating elements */}
           <div className="absolute top-20 left-20 w-4 h-4 bg-white rounded-full opacity-20 animate-bounce"></div>
           <div className="absolute top-40 right-32 w-3 h-3 bg-blue-300 rounded-full opacity-30 animate-bounce delay-300"></div>
           <div className="absolute bottom-32 left-1/3 w-2 h-2 bg-green-300 rounded-full opacity-25 animate-bounce delay-700"></div>
         </div>
-        
+
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-12">
             {/* Title with gradient text */}
             <div className="space-y-6">
 
-              
+
               <h2 className="text-6xl font-bold leading-tight">
                 <span className="text-white">Conoce</span>
                 <br />
@@ -119,12 +125,12 @@ const ImprovedSections = () => {
                   productos
                 </span>
               </h2>
-              
+
               <p className="text-xl text-gray-300 max-w-2xl mx-auto">
                 Descubre nuestra amplia gama de productos alimenticios de la más alta calidad
               </p>
             </div>
-            
+
             {/* CTA Button */}
             <div className="flex justify-center">
               <button className="group relative bg-gradient-to-r from-blue-600 to-green-600 text-white px-12 py-6 rounded-2xl text-xl font-bold hover:from-blue-700 hover:to-green-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 overflow-hidden">
