@@ -92,19 +92,11 @@ const ImprovedSections = () => {
       </section>
 
       {/* Catalog Section */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-blue-900 to-green-900 py-24 overflow-hidden">
-        {/* Animated background elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute top-3/4 right-1/4 w-80 h-80 bg-green-400 rounded-full blur-3xl animate-pulse delay-1000"></div>
-          </div>
-
-          {/* Floating elements */}
-          <div className="absolute top-20 left-20 w-4 h-4 bg-white rounded-full opacity-20 animate-bounce"></div>
-          <div className="absolute top-40 right-32 w-3 h-3 bg-blue-300 rounded-full opacity-30 animate-bounce delay-300"></div>
-          <div className="absolute bottom-32 left-1/3 w-2 h-2 bg-green-300 rounded-full opacity-25 animate-bounce delay-700"></div>
-        </div>
+      <section
+  className="relative min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
+  style={{ backgroundImage: "url('/catalogo.png')" }}
+>
+   
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="space-y-12">
