@@ -13,7 +13,7 @@ const HeroCarousel = () => {
       subtitle: "Comercializadora PATYUBA se lo brinda",
       description: "Tu proveedor confiable de materias primas PATO",
       highlight: "Calidad y cumplimiento garantizados",
-      backgroundImage: "heroRosa.png",
+      backgroundImage: "pinkHeroCut.png",
       buttonText: "Conoce nuestros productos"
     },
     {
@@ -22,7 +22,7 @@ const HeroCarousel = () => {
       subtitle: "Transformando industrias",
       description: "Experiencia y confianza en cada entrega",
       highlight: "Socios estratégicos de tu éxito",
-      backgroundImage: "/yellowhero.jpeg",
+      backgroundImage: "/blueHeroCut.png",
       buttonText: "Nuestra experiencia"
     },
     {
@@ -31,7 +31,7 @@ const HeroCarousel = () => {
       subtitle: "Para cada cliente",
       description: "Soluciones adaptadas a tus necesidades",
       highlight: "Asesoría técnica especializada",
-      backgroundImage: "bluehero.jpeg",
+      backgroundImage: "redHeroCut.jpg",
       buttonText: "Contáctanos"
     },
         {
@@ -40,7 +40,7 @@ const HeroCarousel = () => {
       subtitle: "Para cada cliente",
       description: "Soluciones adaptadas a tus necesidades",
       highlight: "Asesoría técnica especializada",
-      backgroundImage: "/redhero.jpeg",
+      backgroundImage: "/greenHeroCut.png",
       buttonText: "Contáctanos"
     }
   ];
