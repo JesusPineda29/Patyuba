@@ -1,5 +1,4 @@
 
-import { ChevronRight } from 'lucide-react';
 
 const ImprovedSections = () => {
   return (
