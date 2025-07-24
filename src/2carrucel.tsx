@@ -68,9 +68,11 @@ const SimpleCarousel = () => {
     return () => clearInterval(interval);
   }, [maxIndex]);
 
+
+
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-16" style={{ backgroundImage: "url('destacados.jpg')" }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">
             Nuestros Productos Destacados
@@ -80,9 +82,9 @@ const SimpleCarousel = () => {
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative" >
           {/* Contenedor del carrusel con flechas en los lados */}
-          <div className="relative overflow-hidden rounded-2xl">
+          <div className="relative overflow-hidden rounded-2xl" >
             {/* Flecha izquierda */}
             <button 
               onClick={goToPrevious}
