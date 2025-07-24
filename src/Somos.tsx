@@ -59,12 +59,12 @@ const ImprovedSections = () => {
       </section>
 
       {/* Catalog Section */}
-   <section className="relative min-h-[100vh] bg-cover bg-center bg-no-repeat overflow-hidden flex items-center justify-center" 
+   <section className="relative min-h-[95vh] bg-cover bg-center bg-no-repeat overflow-hidden flex  justify-center items-start pt-24" 
              style={{ backgroundImage: "url('/catalogo.png')" }}>
       {/* Overlay opcional para mejorar legibilidad */}
       <div className="absolute inset-0 bg-white/10"></div>
       
-      <div className="relative z-10 text-center px-6 ">
+      <div className="relative z-10 text-center px-6">
         {/* Título */}
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-8 max-w-4xl mx-auto leading-tight">
           CONOCE NUESTRO CATÁLOGO DE PRODUCTOS
