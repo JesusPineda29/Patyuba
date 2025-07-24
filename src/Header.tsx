@@ -32,7 +32,7 @@ const PatyubaNavbar = () => {
   const navItems = [
     { name: 'INICIO', href: '#inicio' },
     { name: 'PRODUCTOS', href: '#productos' },
-    { name: 'CONOCENOS', href: '#conocenos' },
+    { name: 'CONOCENOS', href: '#somos' },
     { name: 'CONTACTO', href: '#contacto' }
   ];
 

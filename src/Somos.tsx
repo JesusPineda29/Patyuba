@@ -1,90 +1,57 @@
 
-import { Download, ChevronRight, Package, Award, Leaf } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const ImprovedSections = () => {
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50" id='somos'>
       {/* About Section */}
-      <section className="relative bg-gradient-to-br from-slate-50 via-white to-blue-50 py-20 overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-green-400 rounded-full blur-3xl"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <div className="inline-flex items-center space-x-2 bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">
-                  <Award className="w-4 h-4" />
-                  <span>Calidad Premium</span>
-                </div>
-                <h2 className="text-5xl font-bold text-gray-900 leading-tight">
-                  Somos
-                  <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-600">
-                    excelencia
-                  </span>
-                </h2>
-              </div>
-
-              <p className="text-xl text-gray-600 leading-relaxed">
-                Empresa mexicana que busca ofrecerte la
-                <span className="font-semibold text-gray-800"> mejor calidad </span>
-                en productos dentro de la rama alimenticia.
-              </p>
-
-
-
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button className="group bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-4 rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
-                  <Download className="w-5 h-5 group-hover:animate-bounce" />
-                  <span>Descarga ficha técnica</span>
-                </button>
-                <button className="group bg-white text-gray-800 px-8 py-4 rounded-xl font-semibold border-2 border-gray-200 hover:border-blue-300 hover:bg-blue-50 transition-all duration-300 flex items-center justify-center space-x-2">
-                  <span>Descubre más</span>
-                  <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </div>
+      <section className="relative min-h-[70vh] bg-cover bg-center bg-no-repeat overflow-hidden" style={{ backgroundImage: "url('/somos.png')" }}>
+        <div className="relative z-10 max-w-7xl mx-auto px-8 py-32 grid md:grid-cols-2 gap-16 items-center">
+          {/* Izquierda */}
+          <div className="space-y-8">
+            <div>
+              <h1 className="text-6xl font-bold text-gray-800 mb-2">
+                Somos
+              </h1>
+              <h2 className="text-6xl font-bold text-gray-800">
+                <span className="text-pink-600">PAT</span><span className="text-blue-500">YU</span><span className="text-sky-950">BA</span>
+              </h2>
             </div>
 
-            <div className="flex justify-center">
-              <div className="space-y-6">
-                {/* Main logo container */}
-                <div className="relative bg-gradient-to-br from-white to-gray-50 w-80 h-48 rounded-2xl shadow-2xl flex items-center justify-center border border-gray-100 overflow-hidden group hover:shadow-3xl transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-blue-600/10 to-green-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  <div className="relative z-10 text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-green-600 rounded-full mx-auto mb-3 flex items-center justify-center">
-                      <Package className="w-8 h-8 text-white" />
-                    </div>
-                    <span className="text-2xl font-bold text-gray-700">Tu Logo</span>
-                  </div>
-                </div>
+            <p className="text-xl text-gray-700 leading-relaxed max-w-lg">
+              Comercializadora mexicana que busca ofrecerte la mejor calidad en productos dentro de la rama alimenticia.
+            </p>
 
-                {/* Small containers */}
-                <div className="flex space-x-4 justify-center">
-                  <div className="bg-gradient-to-br from-blue-500 to-blue-600 w-32 h-32 rounded-xl shadow-lg flex items-center justify-center text-white text-sm font-bold hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
-                    <div className="text-center">
-                      <Award className="w-6 h-6 mx-auto mb-2" />
-                      <p>
-                        <h3>MISION</h3>
-                        <span>Ofrecer materias primas con la mejor calidad y rapidez, ahorrando tiempo al cliente y respondiendo de forma ágil a sus necesidades urgentes.</span>
-                      </p>
+            <div className="flex gap-6 flex-wrap">
+              <button className="bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105">
+                Descubre más
+              </button>
+              <button className="bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105">
+                DOSSIER CORPORATIVO
+              </button>
+            </div>
+          </div>
 
-                    </div>
-                  </div>
-                  <div className="bg-gradient-to-br from-green-500 to-green-600 w-32 h-32 rounded-xl shadow-lg flex items-center justify-center text-white text-sm font-bold hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer">
-                    <div className="text-center">
-                      <Leaf className="w-6 h-6 mx-auto mb-2" />
-                      <p>
-                        <h3>VISION</h3>
-                        <span>Ser la comercializadora confiable y ágil de materias primas
-                          reconocida por su
-                          respuesta inmediata, atención al cliente y altos estándares de calidad.</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+          {/* Derecha */}
+          <div className="flex flex-col items-center gap-10">
+            {/* Logo */}
+
+            <img src="/logo.png" alt="Logo" className="w-50 h-50 object-contain" />
+
+
+            {/* Misión y visión */}
+            <div className="flex flex-col md:flex-row gap-8 w-full justify-center">
+              <div className="bg-pink-700 text-white p-8 rounded-2xl w-full md:w-1/2 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                <h3 className="font-bold text-2xl mb-4 text-center">MISIÓN</h3>
+                <p className="text-base leading-relaxed text-center">
+                  Ofrecer materias primas con la mejor calidad y rapidez, ahorrando tiempo al cliente y respondiendo de forma ágil a sus necesidades urgentes.
+                </p>
+              </div>
+              <div className="bg-sky-900 text-white p-8 rounded-2xl w-full md:w-1/2 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                <h3 className="font-bold text-2xl mb-4 text-center">VISIÓN</h3>
+                <p className="text-base leading-relaxed text-center">
+                  Ser la comercializadora confiable y ágil de materias primas reconocida por su respuesta inmediata, atención al cliente y altos estándares de calidad.
+                </p>
               </div>
             </div>
           </div>
@@ -92,50 +59,23 @@ const ImprovedSections = () => {
       </section>
 
       {/* Catalog Section */}
-      <section
-  className="relative min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden"
-  style={{ backgroundImage: "url('/catalogo.png')" }}
->
-   
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="space-y-12">
-            {/* Title with gradient text */}
-            <div className="space-y-6">
-
-
-              <h2 className="text-6xl font-bold leading-tight">
-                <span className="text-white">Conoce</span>
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-green-400">
-                  nuestro
-                </span>
-                <br />
-                <span className="text-white">catálogo de</span>
-                <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-400">
-                  productos
-                </span>
-              </h2>
-
-              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-                Descubre nuestra amplia gama de productos alimenticios de la más alta calidad
-              </p>
-            </div>
-
-            {/* CTA Button */}
-            <div className="flex justify-center">
-              <button className="group relative bg-gradient-to-r from-blue-600 to-green-600 text-white px-12 py-6 rounded-2xl text-xl font-bold hover:from-blue-700 hover:to-green-700 transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:-translate-y-1 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative flex items-center space-x-3">
-                  <span>Explorar Catálogo</span>
-                  <ChevronRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+   <section className="relative min-h-[100vh] bg-cover bg-center bg-no-repeat overflow-hidden flex items-center justify-center" 
+             style={{ backgroundImage: "url('/catalogo.png')" }}>
+      {/* Overlay opcional para mejorar legibilidad */}
+      <div className="absolute inset-0 bg-white/10"></div>
+      
+      <div className="relative z-10 text-center px-6 ">
+        {/* Título */}
+        <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-8 max-w-4xl mx-auto leading-tight">
+          CONOCE NUESTRO CATÁLOGO DE PRODUCTOS
+        </h2>
+        
+        {/* Botón */}
+        <button className="bg-pink-500 hover:bg-pink-600 text-white px-10 py-4 rounded-full text-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-xl">
+          Click aquí
+        </button>
+      </div>
+    </section>
     </div>
   );
 };
