@@ -12,9 +12,9 @@ const SimpleCarousel = () => {
     { id: 3, title: "Producto 3", image: "/destacados03.png" },
     { id: 4, title: "Producto 4", image: "/destacados04.png" },
     { id: 5, title: "Producto 5", image: "/destacados05.png" },
-    { id: 6, title: "Producto 6", image: "/img/producto6.jpg" },
-    { id: 7, title: "Producto 7", image: "/img/producto7.jpg" },
-    { id: 8, title: "Producto 8", image: "/img/producto8.jpg" },
+    { id: 6, title: "Producto 6", image: "/destacados06.png" },
+    { id: 7, title: "Producto 7", image: "/destacados07.png" },
+    { id: 8, title: "Producto 8", image: "/destacados08.png" },
   ];
 
   // Ajustar items por vista según el tamaño de pantalla
