@@ -71,7 +71,7 @@ const SimpleCarousel = () => {
 
 
   return (
-    <div className="bg-gradient-to-br from-gray-50 to-gray-100 py-16" >
+    <div className="bg-slate-200 py-16" >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-800 mb-4">

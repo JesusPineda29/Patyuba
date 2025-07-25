@@ -6,6 +6,7 @@ import SimpleCarousel from './2carrucel';
 import Footer from './Footer';
 import Gallery from './Gallery';
 import SeccionContacto from './SeccionContacto ';
+import FloatingContactWidget from './FloatingContactWidget';
 
 
 function App() {
@@ -30,6 +31,14 @@ function App() {
       <Gallery />
 
       <Footer />
+      
+      <FloatingContactWidget />
+
+
+
+
+
+
     </div>
   );
 }
