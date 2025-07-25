@@ -1,4 +1,4 @@
-import { MapPin, Phone, Smartphone, MessageCircle, Mail, Clock, Send } from 'lucide-react';
+import { MapPin, Phone, Smartphone, MessageCircle, Mail, Send } from 'lucide-react';
 
 const SeccionContacto = () => {
     return (
@@ -8,7 +8,8 @@ const SeccionContacto = () => {
                 backgroundImage: "url('contacto.jpg')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-            }}
+            }} 
+            id='contacto'
         >
             {/* Elementos decorativos de fondo */}
 

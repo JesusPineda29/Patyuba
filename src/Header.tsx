@@ -15,19 +15,26 @@ const PatyubaNavbar = () => {
   }, []);
 
   // Cerrar modal al hacer clic fuera
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        isMenuOpen &&
-        !(event.target as HTMLElement).closest('.mobile-nav') &&
-        !(event.target as HTMLElement).closest('.menu-button')
-      ) {
-        setIsMenuOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isMenuOpen]);
+useEffect(() => {
+  const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+    const target = (event.target as HTMLElement);
+    if (
+      isMenuOpen &&
+      !target.closest('.mobile-nav') &&
+      !target.closest('.menu-button')
+    ) {
+      setIsMenuOpen(false);
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+  document.addEventListener('touchstart', handleClickOutside);
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+    document.removeEventListener('touchstart', handleClickOutside);
+  };
+}, [isMenuOpen]);
+
 
   const navItems = [
     { name: 'INICIO', href: '#inicio' },
@@ -45,24 +52,37 @@ const PatyubaNavbar = () => {
         <div className="flex items-center justify-between h-20 w-full">
 
           {/* Logo completamente a la izquierda */}
-          <div className="flex items-center space-x-4 group cursor-pointer">
+          <div
+            className="flex items-center space-x-4 group cursor-pointer"
+            onClick={() => {
+              const target = document.getElementById("inicio");
+              if (target) {
+                target.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
             <img
               src="/logo.png"
               alt="Logo Patyuba"
               className="w-14 h-14 object-contain rounded-full shadow-lg group-hover:scale-110 transition-transform duration-300"
             />
             <div className="text-left">
-              <div className={`text-base font-bold transition-all duration-300 ${isScrolled ? 'text-gray-800' : 'text-white'
-                } group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-500 group-hover:bg-clip-text group-hover:text-transparent`}>
+              <div
+                className={`text-base font-bold transition-all duration-300 ${
+                  isScrolled ? "text-gray-800" : "text-white"
+                } group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-500 group-hover:bg-clip-text group-hover:text-transparent`}
+              >
                 COMERCIALIZADORA
               </div>
-              <div className={`text-2xl font-black transition-all duration-300 ${isScrolled ? 'text-gray-900' : 'text-white'
-                } group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-red-500 group-hover:bg-clip-text group-hover:text-transparent`}>
+              <div
+                className={`text-2xl font-black transition-all duration-300 ${
+                  isScrolled ? "text-gray-900" : "text-white"
+                } group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-red-500 group-hover:bg-clip-text group-hover:text-transparent`}
+              >
                 PATYUBA
               </div>
             </div>
           </div>
-
 
           {/* Menú desktop y botón hamburguesa a la derecha */}
           <div className="flex items-center gap-4">
@@ -73,16 +93,13 @@ const PatyubaNavbar = () => {
                   key={item.name}
                   href={item.href}
                   className={`relative px-6 py-3 text-sm font-semibold transition-all duration-300 rounded-full overflow-hidden group ${isScrolled
-                      ? 'text-gray-700 hover:text-white'
-                      : 'text-white/90 hover:text-white'
+                      ? 'text-gray-700 hover:text-white hover:bg-purple-600'
+                      : 'text-white/90 hover:text-white hover:bg-purple-600'
                     }`}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-full"></div>
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-700 rounded-full"></div>
                   <span className="relative z-10 group-hover:drop-shadow-sm text-lg md:text-xl font-bold">
                     {item.name}
                   </span>
-                  <div className="absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-pink-400 to-purple-400 group-hover:w-full group-hover:left-0 transition-all duration-500 rounded-full"></div>
                 </a>
               ))}
             </div>
@@ -113,12 +130,11 @@ const PatyubaNavbar = () => {
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
                 className={`block px-6 py-4 text-base font-medium transition-all duration-300 rounded-xl overflow-hidden relative group ${isScrolled
-                    ? 'text-gray-700 hover:text-white'
-                    : 'text-white/90 hover:text-white'
+                    ? 'text-gray-700 hover:text-white hover:bg-purple-600'
+                    : 'text-white/90 hover:text-white hover:bg-purple-600'
                   }`}
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left rounded-xl"></div>
                 <span className="relative z-10 text-lg font-bold">{item.name}</span>
               </a>
             ))}

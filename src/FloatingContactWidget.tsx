@@ -45,7 +45,7 @@ const FloatingContactWidget = () => {
         </p>
         <div className="flex flex-col gap-3">
           <a
-            href="https://wa.me/525551234567"
+            href="https://wa.me/5514958244"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 text-white px-4 py-2 rounded-2xl font-bold text-sm text-center shadow-lg hover:shadow-green-200/50 hover:scale-105 transition-all duration-300"
@@ -53,7 +53,7 @@ const FloatingContactWidget = () => {
             Chatea por WhatsApp
           </a>
           <a
-            href="tel:+525555551234"
+            href="tel:+5558325989"
             className="bg-rose-500 text-white px-4 py-2 rounded-2xl font-bold text-sm text-center shadow-lg hover:shadow-pink-200/50 hover:scale-105 transition-all duration-300"
           >
             Llamar Ahora

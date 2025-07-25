@@ -1,47 +1,47 @@
 import { useState, useEffect } from 'react';
-import { ChevronLeft, ChevronRight, CheckCircle} from 'lucide-react';
+import { ChevronLeft, ChevronRight, CheckCircle } from 'lucide-react';
 
 const HeroCarousel = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [direction, setDirection] = useState('next');
-  
+
   const slides = [
     {
       id: 1,
-      title: "",
-      subtitle: "Comercializadora PATYUBA se lo brinda",
-      description: "Tu proveedor confiable de materias primas PATO",
+      title: "El color que nesecita",
+      subtitle: "PATYUBA se lo brinda",
+      description: "Tu proveedor confiable de materias primas",
       highlight: "Calidad y cumplimiento garantizados",
       backgroundImage: "pinkHeroCut.png",
       buttonText: "Conoce nuestros productos"
     },
     {
       id: 2,
-      title: "Más de 20 años",
-      subtitle: "Transformando industrias",
+      title: "Servicio personalizado",
+      subtitle: "para cada cliente",
       description: "Experiencia y confianza en cada entrega",
-      highlight: "Socios estratégicos de tu éxito",
+      highlight: "",
       backgroundImage: "/blueHeroCut.png",
-      buttonText: "Nuestra experiencia"
+      buttonText: "Conoce nuestros productos"
     },
     {
       id: 3,
-      title: "Servicio personalizado",
-      subtitle: "Para cada cliente",
+      title: "Lo que necesitas",
+      subtitle: "como lo necesitas",
       description: "Soluciones adaptadas a tus necesidades",
       highlight: "Asesoría técnica especializada",
       backgroundImage: "redHeroCut.jpg",
-      buttonText: "Contáctanos"
+      buttonText: "Conoce nuestros productos"
     },
-        {
+    {
       id: 4,
-      title: "Servicio personalizado",
-      subtitle: "Para cada cliente",
-      description: "Soluciones adaptadas a tus necesidades",
-      highlight: "Asesoría técnica especializada",
+      title: "Te damos más que ingredientes:",
+      subtitle: "te damos experiencias",
+      description: "Respondemos agilmente a tus necesidades",
+      highlight: "",
       backgroundImage: "/greenHeroCut.png",
-      buttonText: "Contáctanos"
+      buttonText: "Conoce nuestros productos"
     }
   ];
 
@@ -88,9 +88,8 @@ const HeroCarousel = () => {
         {slides.map((slide, index) => (
           <div
             key={slide.id}
-            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`absolute inset-0 bg-cover bg-center bg-no-repeat transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100' : 'opacity-0'
+              }`}
             style={{
               backgroundImage: `url(${slide.backgroundImage})`,
             }}
@@ -105,71 +104,65 @@ const HeroCarousel = () => {
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            
+
             {/* Text content with real slide animations */}
             <div className="text-white relative">
-              
+
               <h1 className="text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                <span className={`block transition-all duration-700 ease-out ${
-                  isTransitioning 
-                    ? direction === 'next' 
-                      ? 'opacity-0 transform translate-x-full' 
+                <span className={`block transition-all duration-700 ease-out ${isTransitioning
+                    ? direction === 'next'
+                      ? 'opacity-0 transform translate-x-full'
                       : 'opacity-0 transform -translate-x-full'
                     : 'opacity-100 transform translate-x-0'
-                }`} style={{ transitionDelay: '0.05s' }}>
+                  }`} style={{ transitionDelay: '0.05s' }}>
                   {slides[currentSlide].title}
                 </span>
-                <span className={`block text-white/90 transition-all duration-700 ease-out ${
-                  isTransitioning 
-                    ? direction === 'next' 
-                      ? 'opacity-0 transform translate-x-full' 
+                <span className={`block text-white/90 transition-all duration-700 ease-out ${isTransitioning
+                    ? direction === 'next'
+                      ? 'opacity-0 transform translate-x-full'
                       : 'opacity-0 transform -translate-x-full'
                     : 'opacity-100 transform translate-x-0'
-                }`} style={{ transitionDelay: '0.1s' }}>
+                  }`} style={{ transitionDelay: '0.1s' }}>
                   {slides[currentSlide].subtitle}
                 </span>
               </h1>
-              
-              <p className={`text-xl text-white/90 mb-4 transition-all duration-700 ease-out ${
-                isTransitioning 
-                  ? direction === 'next' 
-                    ? 'opacity-0 transform translate-x-full' 
+
+              <p className={`text-xl text-white/90 mb-4 transition-all duration-700 ease-out ${isTransitioning
+                  ? direction === 'next'
+                    ? 'opacity-0 transform translate-x-full'
                     : 'opacity-0 transform -translate-x-full'
                   : 'opacity-100 transform translate-x-0'
-              }`} style={{ transitionDelay: '0.15s' }}>
+                }`} style={{ transitionDelay: '0.15s' }}>
                 {slides[currentSlide].description}
               </p>
-              
-              <p className={`text-lg text-white/80 mb-8 transition-all duration-700 ease-out ${
-                isTransitioning 
-                  ? direction === 'next' 
-                    ? 'opacity-0 transform translate-x-full' 
+
+              <p className={`text-lg text-white/80 mb-8 transition-all duration-700 ease-out ${isTransitioning
+                  ? direction === 'next'
+                    ? 'opacity-0 transform translate-x-full'
                     : 'opacity-0 transform -translate-x-full'
                   : 'opacity-100 transform translate-x-0'
-              }`} style={{ transitionDelay: '0.2s' }}>
+                }`} style={{ transitionDelay: '0.2s' }}>
                 {slides[currentSlide].highlight}
               </p>
-              
-              <button className={`bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-500 hover:scale-105 transform shadow-2xl hover:shadow-3xl ${
-                isTransitioning 
-                  ? direction === 'next' 
-                    ? 'opacity-0 transform translate-x-full' 
+
+              <button className={`bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-500 hover:scale-105 transform shadow-2xl hover:shadow-3xl ${isTransitioning
+                  ? direction === 'next'
+                    ? 'opacity-0 transform translate-x-full'
                     : 'opacity-0 transform -translate-x-full'
                   : 'opacity-100 transform translate-x-0'
-              }`} style={{ transitionDelay: '0.25s' }}>
+                }`} style={{ transitionDelay: '0.25s' }}>
                 {slides[currentSlide].buttonText}
               </button>
             </div>
 
             {/* Visual element with slide animations */}
             <div className="hidden lg:block relative">
-              <div className={`relative w-full h-96 transition-all duration-700 ease-out ${
-                isTransitioning 
-                  ? direction === 'next' 
-                    ? 'opacity-0 transform translate-x-full' 
+              <div className={`relative w-full h-96 transition-all duration-700 ease-out ${isTransitioning
+                  ? direction === 'next'
+                    ? 'opacity-0 transform translate-x-full'
                     : 'opacity-0 transform -translate-x-full'
                   : 'opacity-100 transform translate-x-0'
-              }`} style={{ transitionDelay: '0.1s' }}>
+                }`} style={{ transitionDelay: '0.1s' }}>
                 {/* Aquí puedes agregar contenido adicional si lo necesitas */}
               </div>
             </div>
@@ -185,7 +178,7 @@ const HeroCarousel = () => {
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
-      
+
       <button
         onClick={nextSlide}
         className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-sm text-white p-3 rounded-full hover:bg-white/30 transition-all duration-300 hover:scale-110 hover:shadow-lg z-20 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -200,11 +193,10 @@ const HeroCarousel = () => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3 h-3 rounded-full transition-all duration-500 hover:scale-150 ${
-              index === currentSlide
+            className={`w-3 h-3 rounded-full transition-all duration-500 hover:scale-150 ${index === currentSlide
                 ? 'bg-white scale-125 shadow-lg'
                 : 'bg-white/50 hover:bg-white/70'
-            }`}
+              }`}
             disabled={isTransitioning}
           />
         ))}
@@ -212,7 +204,7 @@ const HeroCarousel = () => {
 
       {/* Enhanced progress bar with smooth animation */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-white/20 z-20">
-        <div 
+        <div
           className="h-full bg-gradient-to-r from-white via-white/90 to-white transition-all duration-700 ease-out shadow-lg"
           style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
         />
