@@ -19,7 +19,7 @@ const Gallery = () => {
         {/* Elemento Verde */}
         <div className="h-48 md:col-start-2 md:col-span-3 group cursor-pointer">
           <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-1 hover:shadow-3xl">
-            <img src="/verdesito.jpg" alt="imagen" className="w-full h-full object-cover" />
+            <img src="/verdesito.png" alt="imagen" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
             <div className="absolute inset-0 p-6 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
               <div>
@@ -41,7 +41,7 @@ const Gallery = () => {
         {/* Elemento Naranja */}
         <div className="h-[300px] md:col-start-4 md:row-start-2 md:row-span-2 md:h-[545px] group cursor-pointer">
           <div className="relative w-full h-full rounded-xl overflow-hidden shadow-2xl transition-all duration-500 hover:scale-105 hover:rotate-2 hover:shadow-3xl">
-            <img src="/sombrasc.jpg" alt="imagen" className="w-full h-full object-cover" />
+            <img src="/sombrasc.png" alt="imagen" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
             <div className="absolute inset-0 p-6 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
               <div>
