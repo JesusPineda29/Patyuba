@@ -1,45 +1,25 @@
-
-import HeroCarousel from './carrusel';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ImprovedHeader from './Header';
-import ImprovedSections from './Somos';
-import SimpleCarousel from './2carrucel';
 import Footer from './Footer';
-import Gallery from './Gallery';
-import SeccionContacto from './SeccionContacto ';
 import FloatingContactWidget from './FloatingContactWidget';
 
+// Tus páginas
+import Home from './Home';
+import {Productos} from './Productos';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-
-
-      <ImprovedHeader />
-
-      {/* Hero Section */}
-      <HeroCarousel />
-
-
-      <ImprovedSections />
-
-      {/* Products Carousel */}
-      <SimpleCarousel />
-
-
-      <SeccionContacto />
-      <Gallery />
-
-      <Footer />
-      
-      <FloatingContactWidget />
-
-
-
-
-
-
-    </div>
+    <Router>
+      <div className="min-h-screen bg-white">
+        <ImprovedHeader />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/productos" element={<Productos />} />
+        </Routes>
+        <Footer />
+        <FloatingContactWidget />
+      </div>
+    </Router>
   );
 }
 

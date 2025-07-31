@@ -42,6 +42,15 @@ const HeroCarousel = () => {
       highlight: "",
       backgroundImage: "/greenHeroCut.png",
       buttonText: "Conoce nuestros productos"
+    },
+    {
+      id: 5,
+      title: "Te damos más que ingredientes:",
+      subtitle: "te damos experiencias",
+      description: "Respondemos agilmente a tus necesidades",
+      highlight: "",
+      backgroundImage: "/purpleHero.png",
+      buttonText: "Conoce nuestros productos"
     }
   ];
 
@@ -110,46 +119,46 @@ const HeroCarousel = () => {
 
               <h1 className="text-6xl lg:text-7xl font-bold mb-6 leading-tight">
                 <span className={`block transition-all duration-700 ease-out ${isTransitioning
-                    ? direction === 'next'
-                      ? 'opacity-0 transform translate-x-full'
-                      : 'opacity-0 transform -translate-x-full'
-                    : 'opacity-100 transform translate-x-0'
+                  ? direction === 'next'
+                    ? 'opacity-0 transform translate-x-full'
+                    : 'opacity-0 transform -translate-x-full'
+                  : 'opacity-100 transform translate-x-0'
                   }`} style={{ transitionDelay: '0.05s' }}>
                   {slides[currentSlide].title}
                 </span>
                 <span className={`block text-white/90 transition-all duration-700 ease-out ${isTransitioning
-                    ? direction === 'next'
-                      ? 'opacity-0 transform translate-x-full'
-                      : 'opacity-0 transform -translate-x-full'
-                    : 'opacity-100 transform translate-x-0'
+                  ? direction === 'next'
+                    ? 'opacity-0 transform translate-x-full'
+                    : 'opacity-0 transform -translate-x-full'
+                  : 'opacity-100 transform translate-x-0'
                   }`} style={{ transitionDelay: '0.1s' }}>
                   {slides[currentSlide].subtitle}
                 </span>
               </h1>
 
               <p className={`text-xl text-white/90 mb-4 transition-all duration-700 ease-out ${isTransitioning
-                  ? direction === 'next'
-                    ? 'opacity-0 transform translate-x-full'
-                    : 'opacity-0 transform -translate-x-full'
-                  : 'opacity-100 transform translate-x-0'
+                ? direction === 'next'
+                  ? 'opacity-0 transform translate-x-full'
+                  : 'opacity-0 transform -translate-x-full'
+                : 'opacity-100 transform translate-x-0'
                 }`} style={{ transitionDelay: '0.15s' }}>
                 {slides[currentSlide].description}
               </p>
 
               <p className={`text-lg text-white/80 mb-8 transition-all duration-700 ease-out ${isTransitioning
-                  ? direction === 'next'
-                    ? 'opacity-0 transform translate-x-full'
-                    : 'opacity-0 transform -translate-x-full'
-                  : 'opacity-100 transform translate-x-0'
+                ? direction === 'next'
+                  ? 'opacity-0 transform translate-x-full'
+                  : 'opacity-0 transform -translate-x-full'
+                : 'opacity-100 transform translate-x-0'
                 }`} style={{ transitionDelay: '0.2s' }}>
                 {slides[currentSlide].highlight}
               </p>
 
               <button className={`bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-500 hover:scale-105 transform shadow-2xl hover:shadow-3xl ${isTransitioning
-                  ? direction === 'next'
-                    ? 'opacity-0 transform translate-x-full'
-                    : 'opacity-0 transform -translate-x-full'
-                  : 'opacity-100 transform translate-x-0'
+                ? direction === 'next'
+                  ? 'opacity-0 transform translate-x-full'
+                  : 'opacity-0 transform -translate-x-full'
+                : 'opacity-100 transform translate-x-0'
                 }`} style={{ transitionDelay: '0.25s' }}>
                 {slides[currentSlide].buttonText}
               </button>
@@ -158,10 +167,10 @@ const HeroCarousel = () => {
             {/* Visual element with slide animations */}
             <div className="hidden lg:block relative">
               <div className={`relative w-full h-96 transition-all duration-700 ease-out ${isTransitioning
-                  ? direction === 'next'
-                    ? 'opacity-0 transform translate-x-full'
-                    : 'opacity-0 transform -translate-x-full'
-                  : 'opacity-100 transform translate-x-0'
+                ? direction === 'next'
+                  ? 'opacity-0 transform translate-x-full'
+                  : 'opacity-0 transform -translate-x-full'
+                : 'opacity-100 transform translate-x-0'
                 }`} style={{ transitionDelay: '0.1s' }}>
                 {/* Aquí puedes agregar contenido adicional si lo necesitas */}
               </div>
@@ -194,8 +203,8 @@ const HeroCarousel = () => {
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-3 h-3 rounded-full transition-all duration-500 hover:scale-150 ${index === currentSlide
-                ? 'bg-white scale-125 shadow-lg'
-                : 'bg-white/50 hover:bg-white/70'
+              ? 'bg-white scale-125 shadow-lg'
+              : 'bg-white/50 hover:bg-white/70'
               }`}
             disabled={isTransitioning}
           />

@@ -37,8 +37,8 @@ useEffect(() => {
 
 
   const navItems = [
-    { name: 'INICIO', href: '#inicio' },
-    { name: 'PRODUCTOS', href: '#productos' },
+    { name: 'INICIO', href: '/' },
+    { name: 'PRODUCTOS', href: '/productos' },
     { name: 'CONOCENOS', href: '#somos' },
     { name: 'CONTACTO', href: '#contacto' }
   ];
