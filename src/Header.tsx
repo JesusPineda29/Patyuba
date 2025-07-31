@@ -45,14 +45,15 @@ useEffect(() => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${isScrolled
-        ? 'bg-white/95 backdrop-blur-md shadow-2xl border-b border-gray-200/20'
+        ? 'bg-gradient-to-l from-fuchsia-900 to-pink-700 backdrop-blur-md shadow-2xl border-b border-gray-200/20'
         : 'bg-transparent'
       }`}>
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 w-full">
 
           {/* Logo completamente a la izquierda */}
-          <div
+          <a
+            href='/'
             className="flex items-center space-x-4 group cursor-pointer"
             onClick={() => {
               const target = document.getElementById("inicio");
@@ -69,20 +70,20 @@ useEffect(() => {
             <div className="text-left">
               <div
                 className={`text-base font-bold transition-all duration-300 ${
-                  isScrolled ? "text-gray-800" : "text-white"
+                  isScrolled ? "text-white" : "text-white"
                 } group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-500 group-hover:bg-clip-text group-hover:text-transparent`}
               >
                 COMERCIALIZADORA
               </div>
               <div
                 className={`text-2xl font-black transition-all duration-300 ${
-                  isScrolled ? "text-gray-900" : "text-white"
+                  isScrolled ? "text-white" : "text-white"
                 } group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-red-500 group-hover:bg-clip-text group-hover:text-transparent`}
               >
                 PATYUBA
               </div>
             </div>
-          </div>
+          </a>
 
           {/* Menú desktop y botón hamburguesa a la derecha */}
           <div className="flex items-center gap-4">
@@ -93,8 +94,8 @@ useEffect(() => {
                   key={item.name}
                   href={item.href}
                   className={`relative px-6 py-3 text-sm font-semibold transition-all duration-300 rounded-full overflow-hidden group ${isScrolled
-                      ? 'text-gray-700 hover:text-white hover:bg-purple-600'
-                      : 'text-white/90 hover:text-white hover:bg-purple-600'
+                      ? 'text-white hover:text-white hover:bg-blue-900'
+                      : 'text-white/90 hover:text-white hover:bg-blue-900'
                     }`}
                 >
                   <span className="relative z-10 group-hover:drop-shadow-sm text-lg md:text-xl font-bold">
