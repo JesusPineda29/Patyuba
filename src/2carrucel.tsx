@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const SimpleCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -7,14 +8,14 @@ const SimpleCarousel = () => {
 
   // Datos de ejemplo para el carrusel (máximo 8 productos)
   const carouselItems = [
-    { id: 1, title: "Producto 1", image: "/destacados01.png" },
-    { id: 2, title: "Producto 2", image: "/destacados02.png" },
-    { id: 3, title: "Producto 3", image: "/destacados03.png" },
-    { id: 4, title: "Producto 4", image: "/destacados04.png" },
-    { id: 5, title: "Producto 5", image: "/destacados05.png" },
-    { id: 6, title: "Producto 6", image: "/destacados06.png" },
-    { id: 7, title: "Producto 7", image: "/destacados07.png" },
-    { id: 8, title: "Producto 8", image: "/destacados08.png" },
+    { id: 1, title: "Moldes de Reposteria", image: "/destacados01.png" },
+    { id: 2, title: "Lacas", image: "/destacados02.png" },
+    { id: 3, title: "Conservadores", image: "/destacados03.png" },
+    { id: 4, title: "Mejoradores de Sabor", image: "/destacados04.png" },
+    { id: 5, title: "Colores Primarios", image: "/destacados05.png" },
+    { id: 6, title: "Agentes de Textura", image: "/destacados06.png" },
+    { id: 7, title: "Acidulantes", image: "/destacados07.png" },
+    { id: 8, title: "Sabores", image: "/destacados08.png" },
   ];
 
   // Ajustar items por vista según el tamaño de pantalla
@@ -71,16 +72,20 @@ const SimpleCarousel = () => {
 
 
   return (
-    <div className=" py-16 h-screen bg-cover bg-center" style={{ backgroundImage: "url('/dest.png')" }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" >
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-800 mb-4">
-            Nuestros Productos Destacados
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Descubre nuestra selección de productos premium con la mejor calidad y diseño
+    <div className=" py-16  h-screen bg-cover bg-center" style={{ backgroundImage: "url('/destacados.png')" }}>
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  flex flex-col justify-center">
+        <div className="flex flex-col items-end text-right mb-8  lg:mb-12 pr-2 sm:pr-6 lg:pr-12">
+          <p className="text-4xl sm:text-5xl lg:text-5xl font-bold  " style={{ color: 'rgb(23, 99, 141)' }}>
+            Productos
+          </p>
+          <p className="text-4xl sm:text-5xl lg:text-5xl font-bold " style={{ color: 'rgb(203, 6, 124)' }}>
+            destacados
+          </p>
+          <p className="text-sm sm:text-base lg:text-lg text-[#175c8d] max-w-md sm:max-w-xl">
+            Descubre nuestra selección de calidad.
           </p>
         </div>
+
 
         <div className="relative" >
           {/* Contenedor del carrusel con flechas en los lados */}
@@ -109,32 +114,36 @@ const SimpleCarousel = () => {
               }}
             >
               {carouselItems.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex-shrink-0 p-3"
-                  style={{ width: `${100 / itemsPerView}%` }}
-                >
-                  <div
-                    className="aspect-square rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center text-white group cursor-pointer relative overflow-hidden"
-                    style={{
-                      backgroundImage: `url(${item.image})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                    }}
-                  >
+<div
+  key={item.id}
+  className="flex-shrink-0 p-3"
+  style={{ width: `${100 / itemsPerView}%` }}
+>
+  <div
+    className="aspect-square rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center text-white group cursor-pointer relative overflow-hidden"
+  >
+    {/* Fondo separado, se oscurece solo en hover */}
+    <div
+      className="absolute inset-0 bg-cover bg-center transition group-hover:brightness-65"
+      style={{
+        backgroundImage: `url(${item.image})`,
+      }}
+    ></div>
 
-                    <div className="relative z-10 text-center">
-                      <h3 className="text-base sm:text-lg font-semibold text-center px-4">
-                        {item.title}
-                      </h3>
-                      <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <button className=" bg-opacity-20 backdrop-blur-sm px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-opacity-30 transition-all">
-                          Ver más
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+    {/* Contenido encima */}
+    <div className="relative z-10 text-center">
+      <h3 className="text-base sm:text-2xl font-semibold text-center px-4">
+        {item.title}
+      </h3>
+      <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+   
+
+        <Link to="/productos" className="bg-sky-600 backdrop-blur-sm px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-opacity-30 transition-all">Ver más</Link>
+      </div>
+    </div>
+  </div>
+</div>
+
 
               ))}
             </div>
