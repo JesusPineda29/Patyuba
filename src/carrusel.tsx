@@ -51,6 +51,15 @@ const HeroCarousel = () => {
       highlight: "",
       backgroundImage: "/purpleHero.png",
       buttonText: "Conoce nuestros productos"
+    },
+    {
+      id: 6,
+      title: "Te damos más que ingredientes:",
+      subtitle: "te damos experiencias",
+      description: "Respondemos agilmente a tus necesidades",
+      highlight: "",
+      backgroundImage: "/yellowHero.jpg",
+      buttonText: "Conoce nuestros productos"
     }
   ];
 

@@ -24,9 +24,9 @@ const ImprovedSections = () => {
             <div className="flex gap-6 flex-wrap">
 
               <Link to="/Productos" className="bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105" >Descubre más</Link>
-      
 
-              <a  href="/PATYUBA.pdf" target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105">
+
+              <a href="/PATYUBA.pdf" target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105">
                 DOSSIER CORPORATIVO
               </a>
 
@@ -67,9 +67,15 @@ const ImprovedSections = () => {
 
         <div className="relative z-10 text-center px-6">
           {/* Título */}
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-800 mb-8 max-w-4xl mx-auto leading-tight">
-            CONOCE NUESTRO CATÁLOGO DE PRODUCTOS
-          </h2>
+          <div className="flex flex-col items-end  mb-8  lg:mb-12 pr-2 sm:pr-6 lg:pr-12">
+            <p className="text-4xl sm:text-5xl lg:text-5xl font-bold  " style={{ color: 'rgb(23, 99, 141)' }}>
+              Conoce nuestros
+            </p>
+            <p className="text-4xl sm:text-5xl lg:text-5xl font-bold " style={{ color: 'rgb(203, 6, 124)' }}>
+              productos
+            </p>
+
+          </div>
 
 
           <Link to="/Productos" className="bg-pink-500 hover:bg-pink-600 text-white px-10 py-4 rounded-full text-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-xl" >Click aquí</Link>

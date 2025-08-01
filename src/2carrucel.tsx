@@ -114,35 +114,35 @@ const SimpleCarousel = () => {
               }}
             >
               {carouselItems.map((item) => (
-<div
-  key={item.id}
-  className="flex-shrink-0 p-3"
-  style={{ width: `${100 / itemsPerView}%` }}
->
-  <div
-    className="aspect-square rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center text-white group cursor-pointer relative overflow-hidden"
-  >
-    {/* Fondo separado, se oscurece solo en hover */}
-    <div
-      className="absolute inset-0 bg-cover bg-center transition group-hover:brightness-65"
-      style={{
-        backgroundImage: `url(${item.image})`,
-      }}
-    ></div>
+                <div
+                  key={item.id}
+                  className="flex-shrink-0 p-3"
+                  style={{ width: `${100 / itemsPerView}%` }}
+                >
+                  <div
+                    className="aspect-square rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex flex-col items-center justify-center text-white group cursor-pointer relative overflow-hidden"
+                  >
+                    {/* Fondo separado, se oscurece solo en hover */}
+                    <div
+                      className="absolute inset-0 bg-cover bg-center transition group-hover:brightness-65"
+                      style={{
+                        backgroundImage: `url(${item.image})`,
+                      }}
+                    ></div>
 
-    {/* Contenido encima */}
-    <div className="relative z-10 text-center">
-      <h3 className="text-base sm:text-2xl font-semibold text-center px-4">
-        {item.title}
-      </h3>
-      <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-   
+                    {/* Contenido encima */}
+                    <div className="relative z-10 text-center">
+                      <h3 className="text-base sm:text-2xl font-semibold text-center px-4">
+                        {item.title}
+                      </h3>
+                      <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 
-        <Link to="/productos" className="bg-sky-600 backdrop-blur-sm px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-opacity-30 transition-all">Ver más</Link>
-      </div>
-    </div>
-  </div>
-</div>
+
+                        <Link to="/productos" className="bg-sky-600 backdrop-blur-sm px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-opacity-30 transition-all">Ver más</Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
 
               ))}
