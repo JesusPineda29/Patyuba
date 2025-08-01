@@ -60,28 +60,38 @@ const ImprovedSections = () => {
       </section>
 
       {/* Catalog Section */}
-      <section className="relative min-h-[95vh] bg-cover bg-center bg-no-repeat overflow-hidden flex  justify-center items-start pt-24"
-        style={{ backgroundImage: "url('/catalogo.png')" }}>
-        {/* Overlay opcional para mejorar legibilidad */}
-        <div className="absolute inset-0 bg-white/10"></div>
+<section
+  className="relative min-h-[95vh] bg-cover bg-center bg-no-repeat overflow-hidden flex justify-start items-start pt-24"
+  style={{ backgroundImage: "url('/catalogo.png')" }}
+>
+  <div className="mt-20 relative z-10 px-10 sm:px-16 md:px-24 lg:px-32">
+    {/* Título */}
+    <div className="flex flex-col items-center mb-8 lg:mb-12 space-y-2">
+      <p
+        className="text-4xl sm:text-5xl lg:text-6xl font-bold"
+        style={{ color: 'rgb(23, 99, 141)' }}
+      >
+        Conoce nuestros
+      </p>
+      <p
+        className="text-4xl sm:text-5xl lg:text-6xl font-bold"
+        style={{ color: 'rgb(203, 6, 124)' }}
+      >
+        productos
+      </p>
+    </div>
+    <div className="flex justify-center">
+      <Link
+        to="/Productos"
+        className="bg-pink-500 hover:bg-pink-600 text-white px-10 py-4 rounded-full text-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
+      >
+        Click aquí
+      </Link>
+    </div>
+  </div>
+</section>
 
-        <div className="relative z-10 text-center px-6">
-          {/* Título */}
-          <div className="flex flex-col items-end  mb-8  lg:mb-12 pr-2 sm:pr-6 lg:pr-12">
-            <p className="text-4xl sm:text-5xl lg:text-5xl font-bold  " style={{ color: 'rgb(23, 99, 141)' }}>
-              Conoce nuestros
-            </p>
-            <p className="text-4xl sm:text-5xl lg:text-5xl font-bold " style={{ color: 'rgb(203, 6, 124)' }}>
-              productos
-            </p>
 
-          </div>
-
-
-          <Link to="/Productos" className="bg-pink-500 hover:bg-pink-600 text-white px-10 py-4 rounded-full text-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-xl" >Click aquí</Link>
-
-        </div>
-      </section>
     </div>
   );
 };

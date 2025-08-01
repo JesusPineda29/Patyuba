@@ -75,10 +75,10 @@ const SimpleCarousel = () => {
     <div className=" py-16  h-screen bg-cover bg-center" style={{ backgroundImage: "url('/destacados.png')" }}>
       <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  flex flex-col justify-center">
         <div className="flex flex-col items-end text-right mb-8  lg:mb-12 pr-2 sm:pr-6 lg:pr-12">
-          <p className="text-4xl sm:text-5xl lg:text-5xl font-bold  " style={{ color: 'rgb(23, 99, 141)' }}>
+          <p className="text-4xl sm:text-5xl lg:text-6xl font-bold  " style={{ color: 'rgb(23, 99, 141)' }}>
             Productos
           </p>
-          <p className="text-4xl sm:text-5xl lg:text-5xl font-bold " style={{ color: 'rgb(203, 6, 124)' }}>
+          <p className="text-4xl sm:text-5xl lg:text-6xl font-bold " style={{ color: 'rgb(203, 6, 124)' }}>
             destacados
           </p>
           <p className="text-sm sm:text-base lg:text-lg text-[#175c8d] max-w-md sm:max-w-xl">
