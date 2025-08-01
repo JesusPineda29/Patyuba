@@ -8,7 +8,7 @@ const SeccionContacto = () => {
                 backgroundImage: "url('contacto.jpg')",
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
-            }} 
+            }}
             id='contacto'
         >
             {/* Elementos decorativos de fondo */}
@@ -16,10 +16,13 @@ const SeccionContacto = () => {
 
             <div className="relative z-10 max-w-7xl mx-auto px-6">
                 {/* Header con animación */}
-                <div className="text-center mb-20">
-                    <h2 className="text-6xl md:text-7xl font-bold bg-fuchsia-500 bg-clip-text text-transparent mb-6 leading-tight">
-                        Hablemos
+                <div className=" mb-20">
+                    <h2 className="text-6xl md:text-7xl font-bold bg-clip-text text-transparent  leading-tight" style={{ color: 'rgb(23, 99, 141)' }}>
+                        Estamos <span style={{ color: 'rgb(203, 6, 124)' }} >aquí</span>
                     </h2>
+                    <p className="text-sm sm:text-base lg:text-2xl text-[#175c8d] max-w-md sm:max-w-xl">
+                        Descubre nuestra selección de calidad.
+                    </p>
 
                 </div>
 
