@@ -4,7 +4,7 @@ import React from 'react'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-[#111d27] text-white px-6 py-10 text-sm">
+    <footer className="bg-[#082748] text-white px-6 py-10 text-sm">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-8">
 
         {/* Logo e ilustración */}
@@ -23,16 +23,7 @@ const Footer: React.FC = () => {
 
 
         {/* Menú */}
-<div className="flex flex-col gap-1">
-  <a href="#inicio" className="font-semibold">
-    <p>INICIO</p>
-  </a>
-    <a href="#inicio" className="font-semibold">
-    <p>PRODUCTOS</p>
-  </a>
-  <span className="font-semibold">CONÓCENOS</span>
-  <span className="font-semibold">CONTACTO</span>
-</div>
+
 
 
         {/* Dirección */}
