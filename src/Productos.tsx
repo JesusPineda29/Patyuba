@@ -61,14 +61,14 @@ export const Productos = () => {
 
   // Array de lacas alumínicas
   const lacasAluminicas = [
-    { name: 'Laca DC Amarillo #5', image: '/lacasBoton.jpg', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca DC Amarillo #6', image: '/api/placeholder/150/150', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca Rojo #3', image: '/api/placeholder/150/150', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca Rojo #5', image: '/api/placeholder/150/150', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca Rojo #6', image: '/api/placeholder/150/150', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca Rojo #40', image: '/api/placeholder/150/150', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca Azul #1', image: '/api/placeholder/150/150', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca Azul #2', image: '/api/placeholder/150/150', hoverImage: '/api/placeholder/150/150' }
+    { name: 'Laca DC Amarillo #5', image: '/lacas08.png', hoverImage: '/api/placeholder/150/150' },
+    { name: 'Laca DC Amarillo #6', image: '/lacas07.png', hoverImage: '/api/placeholder/150/150' },
+    { name: 'Laca Rojo #3', image: '/lacas06.png', hoverImage: '/api/placeholder/150/150' },
+    { name: 'Laca Rojo #5', image: '/lacas05.png', hoverImage: '/api/placeholder/150/150' },
+    { name: 'Laca Rojo #6', image: '/lacas04.png', hoverImage: '/api/placeholder/150/150' },
+    { name: 'Laca Rojo #40', image: '/lacas03.png', hoverImage: '/api/placeholder/150/150' },
+    { name: 'Laca Azul #1', image: '/lacas02.png', hoverImage: '/api/placeholder/150/150' },
+    { name: 'Laca Azul #2', image: '/lacas01.png', hoverImage: '/api/placeholder/150/150' }
   ];
 
   // Array de especialidades
@@ -262,17 +262,19 @@ export const Productos = () => {
             <p className="text-gray-600">El plus para tu producto</p>
           </div>
           {/* Contenido de mezclas - con filtro aplicado */}
-          <div className="relative bg-gray-400 py-8 text-center h-32">
-            {/* Contenido de texto */}
-            <div className="relative z-10">
-              <h3 className="text-xl font-medium text-white mb-2">
-                Mezclas de colores y lacas
-              </h3>
-              <p className="text-white/90">
-                Verdes, morados, cafés, negros y más
-              </p>
-            </div>
-          </div>
+<div className="relative py-8 text-center h-32 bg-cover bg-center" style={{backgroundImage: 'url(/)'}}>
+  {/* Filtro opaco sobre la imagen de fondo */}
+  <div className="absolute inset-0 bg-black bg-opacity-20"></div>
+  {/* Contenido de texto por encima del filtro */}
+  <div className="relative z-10">
+    <h3 className="text-xl font-medium text-white mb-2">
+      Mezclas de colores y lacas
+    </h3>
+    <p className="text-white/90">
+      Verdes, morados, cafés, negros y más
+    </p>
+  </div>
+</div>
         </section>
 
         {/* Sección de Especialidades (CON filtro) */}
