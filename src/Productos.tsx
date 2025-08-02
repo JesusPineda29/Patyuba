@@ -73,10 +73,10 @@ export const Productos = () => {
 
   // Array de especialidades
   const especialidades = [
-    { name: 'Caramelos', image: '/lacasBoton.jpg', hoverImage: '/api/placeholder/200/200' },
-    { name: 'Chocolates', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' },
-    { name: 'Pasteles', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' },
-    { name: 'Galletas', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' }
+    { name: 'Caramelos', image: '/moldes04.png', hoverImage: '/api/placeholder/200/200' },
+    { name: 'Chocolates', image: 'moldes02.png', hoverImage: '/api/placeholder/200/200' },
+    { name: 'Pasteles', image: '/moldes03.png', hoverImage: '/api/placeholder/200/200' },
+    { name: 'Galletas', image: '/moldes01.png', hoverImage: '/api/placeholder/200/200' }
   ];
 
   // Componente reutilizable para mostrar cada tarjeta de producto
@@ -96,7 +96,7 @@ export const Productos = () => {
             src={isHovered ? product.hoverImage : (product.defaultImage || product.image)}
             alt={product.title || product.name}
             className={`w-full h-full object-cover transition-opacity duration-300 ${
-              applyDarkFilter ? 'opacity-60' : ''
+              applyDarkFilter ? 'opacity-80' : ''
             }`}
           />
         </div>
@@ -145,7 +145,7 @@ export const Productos = () => {
         </header>
 
         {/* Sección de categorías principales - Grid de 5 columnas (SIN filtro) */}
-        <section className="w-full">
+        <section className="w-full ">
           <div className="grid grid-cols-5 h-140">
             {mainCategories.map((category, index) => (
               <ProductCard 
@@ -166,11 +166,11 @@ export const Productos = () => {
         </section>
 
         {/* Sección de Aditivos (CON filtro) */}
-        <section className="w-full">
+        <section className="w-full mb-10">
           {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Aditivos</h2>
-            <p className="text-gray-600">El plus para tu producto</p>
+            <p className="text-gray-600">El plus para tu productooo</p>
           </div>
           {/* Grid de productos - 2 productos grandes + 3 pequeños en columna */}
           <div className="grid grid-cols-3 h-64">
@@ -188,7 +188,7 @@ export const Productos = () => {
             />
             {/* Columna con 3 productos apilados verticalmente */}
             
-            <div className="grid grid-cols-1 grid-rows-3 bg-black/60 w-full h-full">
+            <div className="grid grid-cols-1 grid-rows-3 bg-black/60 w-full h-full ">
               
               <ProductCard 
                 product={aditivosProducts[2]}
@@ -213,7 +213,7 @@ export const Productos = () => {
         </section>
 
         {/* Sección de Colores Primarios (CON filtro) */}
-        <section className="w-full">
+        <section className="w-full mb-10">
           {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Colores primarios</h2>
@@ -234,7 +234,7 @@ export const Productos = () => {
         </section>
 
         {/* Sección de Lacas Alumínicas (SIN filtro) */}
-        <section className="w-full">
+        <section className="w-full mb-10">
           {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Lacas alumínicas</h2>
@@ -255,30 +255,28 @@ export const Productos = () => {
         </section>
 
         {/* Sección de Mezclas (CON filtro) */}
-        <section className="w-full">
+        <section className="w-full mb-10">
           {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Mezclas</h2>
             <p className="text-gray-600">El plus para tu producto</p>
           </div>
           {/* Contenido de mezclas - con filtro aplicado */}
-<div className="relative py-8 text-center h-32 bg-cover bg-center" style={{backgroundImage: 'url(/)'}}>
-  {/* Filtro opaco sobre la imagen de fondo */}
-  <div className="absolute inset-0 bg-black bg-opacity-20"></div>
-  {/* Contenido de texto por encima del filtro */}
-  <div className="relative z-10">
-    <h3 className="text-xl font-medium text-white mb-2">
-      Mezclas de colores y lacas
-    </h3>
-    <p className="text-white/90">
-      Verdes, morados, cafés, negros y más
-    </p>
-  </div>
-</div>
+          <div className="relative  py-8 text-center h-42  bg-cover bg-center opacity-80" style={{backgroundImage: 'url(/mezclas.png)'}}>
+            {/* Contenido de texto */}
+            <div className="relative z-10">
+              <h3 className="text-xl font-medium text-white mb-2">
+                Mezclas de colores y lacas
+              </h3>
+              <p className="text-white/90">
+                Verdes, morados, cafés, negros y más
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* Sección de Especialidades (CON filtro) */}
-        <section className="w-full">
+        <section className="w-full mb-10">
           {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Especialidades</h2>
