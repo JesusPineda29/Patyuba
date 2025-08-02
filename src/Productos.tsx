@@ -45,7 +45,7 @@ export const Productos = () => {
 
   // Array de productos de aditivos
   const aditivosProducts = [
-    { name: 'Laca DC Amarillo #6', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' },
+    { name: 'Laca DC Amarillo #6', image: '/lacasBoton.jpg', hoverImage: '/api/placeholder/200/200' },
     { name: 'Laca DC Amarillo #6', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' },
     { name: 'Laca DC Amarillo #6', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' },
     { name: 'Laca DC Amarillo #6', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' },
@@ -54,14 +54,14 @@ export const Productos = () => {
 
   // Array de colores primarios
   const coloresPrimarios = [
-    { name: 'Azules', image: '/api/placeholder/300/150', hoverImage: '/api/placeholder/300/150' },
-    { name: 'Rojos', image: '/api/placeholder/300/150', hoverImage: '/api/placeholder/300/150' },
-    { name: 'Amarillos', image: '/api/placeholder/300/150', hoverImage: '/api/placeholder/300/150' }
+    { name: 'Azules', image: '/cp1.png', hoverImage: '/api/placeholder/300/150' },
+    { name: 'Rojos', image: '/cp2.png', hoverImage: '/api/placeholder/300/150' },
+    { name: 'Amarillos', image: '/cp3.png', hoverImage: '/api/placeholder/300/150' }
   ];
 
   // Array de lacas alumínicas
   const lacasAluminicas = [
-    { name: 'Laca DC Amarillo #5', image: '/api/placeholder/150/150', hoverImage: '/api/placeholder/150/150' },
+    { name: 'Laca DC Amarillo #5', image: '/lacasBoton.jpg', hoverImage: '/api/placeholder/150/150' },
     { name: 'Laca DC Amarillo #6', image: '/api/placeholder/150/150', hoverImage: '/api/placeholder/150/150' },
     { name: 'Laca Rojo #3', image: '/api/placeholder/150/150', hoverImage: '/api/placeholder/150/150' },
     { name: 'Laca Rojo #5', image: '/api/placeholder/150/150', hoverImage: '/api/placeholder/150/150' },
@@ -73,14 +73,14 @@ export const Productos = () => {
 
   // Array de especialidades
   const especialidades = [
-    { name: 'Caramelos', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' },
+    { name: 'Caramelos', image: '/lacasBoton.jpg', hoverImage: '/api/placeholder/200/200' },
     { name: 'Chocolates', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' },
     { name: 'Pasteles', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' },
     { name: 'Galletas', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' }
   ];
 
   // Componente reutilizable para mostrar cada tarjeta de producto
-  const ProductCard = ({ product, cardId, className = "" }) => {
+  const ProductCard = ({ product, cardId, className = "", applyDarkFilter = false }) => {
     // Verifica si esta tarjeta específica está siendo hovereada
     const isHovered = hoveredCard === cardId;
     
@@ -95,13 +95,15 @@ export const Productos = () => {
           <img 
             src={isHovered ? product.hoverImage : (product.defaultImage || product.image)}
             alt={product.title || product.name}
-            className="w-full h-full object-cover transition-opacity duration-300"
+            className={`w-full h-full object-cover transition-opacity duration-300 ${
+              applyDarkFilter ? 'opacity-60' : ''
+            }`}
           />
         </div>
 
         {/* Texto mostrado cuando NO hay hover */}
         {!isHovered && (
-          <div className="absolute inset-0 flex items-center justify-center">
+          <div className="absolute inset-0 flex items-center justify-center z-10">
             <h3 className="text-white font-medium text-center px-4">
               {product.title || product.name}
             </h3>
@@ -110,7 +112,7 @@ export const Productos = () => {
 
         {/* Texto mostrado cuando SÍ hay hover (solo si existe hoverText) */}
         {isHovered && product.hoverText && (
-          <div className="absolute inset-0 flex items-center justify-center ">
+          <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="text-center px-4">
               <h3 className="text-white font-medium mb-2">
                 {product.title || product.name}
@@ -142,15 +144,16 @@ export const Productos = () => {
           </p>
         </header>
 
-        {/* Sección de categorías principales - Grid de 5 columnas */}
+        {/* Sección de categorías principales - Grid de 5 columnas (SIN filtro) */}
         <section className="w-full">
           <div className="grid grid-cols-5 h-140">
             {mainCategories.map((category, index) => (
               <ProductCard 
                 key={category.id}
                 product={category}
-                cardId={`main-${category.id}`} // ID único para cada categoría principal
+                cardId={`main-${category.id}`}
                 className="h-full"
+                applyDarkFilter={false} // Sin filtro
               />
             ))}
           </div>
@@ -162,7 +165,7 @@ export const Productos = () => {
           </div>
         </section>
 
-        {/* Sección de Aditivos */}
+        {/* Sección de Aditivos (CON filtro) */}
         <section className="w-full">
           {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
@@ -175,34 +178,41 @@ export const Productos = () => {
               product={aditivosProducts[0]}
               cardId="aditivo-0"
               className="h-full"
+              applyDarkFilter={true} // Con filtro
             />
             <ProductCard 
               product={aditivosProducts[1]}
               cardId="aditivo-1"
               className="h-full"
+              applyDarkFilter={true} // Con filtro
             />
             {/* Columna con 3 productos apilados verticalmente */}
-            <div className="grid grid-cols-1 grid-rows-3">
+            
+            <div className="grid grid-cols-1 grid-rows-3 bg-black/60 w-full h-full">
+              
               <ProductCard 
                 product={aditivosProducts[2]}
                 cardId="aditivo-2"
                 className="h-full"
+                applyDarkFilter={true} // Con filtro
               />
               <ProductCard 
                 product={aditivosProducts[3]}
                 cardId="aditivo-3"
                 className="h-full"
+                applyDarkFilter={true} // Con filtro
               />
               <ProductCard 
                 product={aditivosProducts[4]}
                 cardId="aditivo-4"
                 className="h-full"
+                applyDarkFilter={true} // Con filtro
               />
             </div>
           </div>
         </section>
 
-        {/* Sección de Colores Primarios */}
+        {/* Sección de Colores Primarios (CON filtro) */}
         <section className="w-full">
           {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
@@ -217,12 +227,13 @@ export const Productos = () => {
                 product={color}
                 cardId={`color-${index}`}
                 className="h-full"
+                applyDarkFilter={true} // Con filtro
               />
             ))}
           </div>
         </section>
 
-        {/* Sección de Lacas Alumínicas */}
+        {/* Sección de Lacas Alumínicas (SIN filtro) */}
         <section className="w-full">
           {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
@@ -237,30 +248,34 @@ export const Productos = () => {
                 product={laca}
                 cardId={`laca-${index}`}
                 className="h-full"
+                applyDarkFilter={false} // Sin filtro
               />
             ))}
           </div>
         </section>
 
-        {/* Sección de Mezclas */}
+        {/* Sección de Mezclas (CON filtro) */}
         <section className="w-full">
           {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Mezclas</h2>
             <p className="text-gray-600">El plus para tu producto</p>
           </div>
-          {/* Contenido de mezclas - solo texto descriptivo */}
-          <div className="bg-gray-400 py-8 text-center">
-            <h3 className="text-xl font-medium text-white mb-2">
-              Mezclas de colores y lacas
-            </h3>
-            <p className="text-white/90">
-              Verdes, morados, cafés, negros y más
-            </p>
+          {/* Contenido de mezclas - con filtro aplicado */}
+          <div className="relative bg-gray-400 py-8 text-center h-32">
+            {/* Contenido de texto */}
+            <div className="relative z-10">
+              <h3 className="text-xl font-medium text-white mb-2">
+                Mezclas de colores y lacas
+              </h3>
+              <p className="text-white/90">
+                Verdes, morados, cafés, negros y más
+              </p>
+            </div>
           </div>
         </section>
 
-        {/* Sección de Especialidades */}
+        {/* Sección de Especialidades (CON filtro) */}
         <section className="w-full">
           {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
@@ -275,6 +290,7 @@ export const Productos = () => {
                 product={especialidad}
                 cardId={`especialidad-${index}`}
                 className="h-full"
+                applyDarkFilter={true} // Con filtro
               />
             ))}
           </div>
