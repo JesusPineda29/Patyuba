@@ -9,7 +9,7 @@ const HeroCarousel = () => {
   const slides = [
     {
       id: 1,
-      title: "El color que nesecita",
+      title: "El color que necesita",
       subtitle: "PATYUBA se lo brinda",
       description: "Tu proveedor confiable de materias primas",
       highlight: "Calidad y cumplimiento garantizados",
@@ -27,7 +27,7 @@ const HeroCarousel = () => {
     },
     {
       id: 3,
-      title: "Lo que necesitas",
+      title: "Lo que necesitas,",
       subtitle: "como lo necesitas",
       description: "Soluciones adaptadas a tus necesidades",
       highlight: "Asesoría técnica especializada",
@@ -36,9 +36,9 @@ const HeroCarousel = () => {
     },
     {
       id: 4,
-      title: "Te damos más que ingredientes:",
+      title: "Más que ingredientes,",
       subtitle: "te damos experiencias",
-      description: "Respondemos agilmente a tus necesidades",
+      description: "Respondemos ágilmente a tus necesidades",
       highlight: "",
       backgroundImage: "/greenHeroCut.png",
       buttonText: "Conoce nuestros productos"
