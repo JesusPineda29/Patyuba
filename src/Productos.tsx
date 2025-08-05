@@ -231,53 +231,68 @@ export const Productos = () => {
             ))}
           </div>
           <div className="text-center py-8">
-            <p className="text-gray-600">
+            <p className="text-2xl " style={{ color: 'rgb(23, 99, 141)' }}>
               O sigue bajando para explorar todos nuestros productos
             </p>
           </div>
         </section>
 
         {/* Sección de Aditivos (CON hover effect) */}
-        <section id="section-aditivos" className="w-full mb-10">
-          <div className="bg-[url('/marcoColores.png')] bg-cover bg-center py-4 px-8 text-right h-[181px]">
-            <h2 className="text-2xl font-bold">Aditivos</h2>
-            <p>El plus para tu producto</p>
-          </div>
-          <div className="grid grid-cols-3 h-64">
-            <ProductCard 
-              product={aditivosProducts[0]}
-              cardId="aditivo-0"
-              className="h-full"
-              applyDarkFilter={true}
-            />
-            <ProductCard 
-              product={aditivosProducts[1]}
-              cardId="aditivo-1"
-              className="h-full"
-              applyDarkFilter={true}
-            />
-            <div className="grid grid-cols-1 grid-rows-3 bg-black/60 w-full h-full">
-              <ProductCard 
-                product={aditivosProducts[2]}
-                cardId="aditivo-2"
-                className="h-full"
-                applyDarkFilter={true}
-              />
-              <ProductCard 
-                product={aditivosProducts[3]}
-                cardId="aditivo-3"
-                className="h-full"
-                applyDarkFilter={true}
-              />
-              <ProductCard 
-                product={aditivosProducts[4]}
-                cardId="aditivo-4"
-                className="h-full"
-                applyDarkFilter={true}
-              />
-            </div>
-          </div>
-        </section>
+<section id="section-aditivos" className="w-full mb-10">
+  <div className="bg-[url('/marcoColores.png')] bg-cover bg-center py-4 px-10 text-right h-[181px]">
+    <h1 className="font-semibold mb-4 text-5xl sm:text-5xl lg:text-6xl" style={{ color: 'rgb(203, 6, 124)' }}>
+      Aditivos
+    </h1>
+    <p className="text-3xl" style={{ color: 'rgb(23, 99, 141)' }}>
+      El plus para tu producto
+    </p>
+  </div>
+  
+  {/* Grid principal con 2 columnas */}
+  <div className="grid grid-cols-2 h-64">
+    {/* Columna izquierda - 2 filas */}
+    <div className="grid grid-rows-2 gap-0">
+      <ProductCard
+        product={aditivosProducts[0]} // Conservadores
+        cardId="aditivo-0"
+        className="h-full"
+        applyDarkFilter={true}
+      />
+      <ProductCard
+        product={aditivosProducts[1]} // Estabilizantes, espesantes y emulsionantes
+        cardId="aditivo-1"
+        className="h-full"
+        applyDarkFilter={true}
+      />
+    </div>
+    
+    {/* Columna derecha - 2 filas */}
+    <div className="grid grid-rows-2 gap-0">
+      <ProductCard
+        product={aditivosProducts[2]} // Mejoradores de sabor
+        cardId="aditivo-2"
+        className="h-full"
+        applyDarkFilter={true}
+      />
+      
+      {/* Fila inferior dividida en 2 columnas */}
+      <div className="grid grid-cols-2 gap-0">
+        <ProductCard
+          product={aditivosProducts[3]} // Leudantes y agentes de textura
+          cardId="aditivo-3"
+          className="h-full"
+          applyDarkFilter={true}
+        />
+        <ProductCard
+          product={aditivosProducts[4]} // Acidulantes y reguladores de acidez
+          cardId="aditivo-4"
+          className="h-full"
+          applyDarkFilter={true}
+        />
+      </div>
+    </div>
+  </div>
+</section>
 
         {/* Sección de Colores Primarios (CON hover effect) */}
         <section id="section-colores" className="w-full mb-10">
