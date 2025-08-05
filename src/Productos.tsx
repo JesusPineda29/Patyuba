@@ -8,36 +8,36 @@ export const Productos = () => {
   const mainCategories = [
     {
       id: 'aditivos',
-      title: 'Aditivos',
-      defaultImage: '/aditivosBoton.png',
+      title: '',
+      defaultImage: '/categorias05.png',
       hoverImage: '/api/placeholder/300/400',
       hoverText: 'Mejora tus mezclas'
     },
     {
       id: 'colores',
-      title: 'Colores primarios',
-      defaultImage: '/primariosBoton.jpg',
+      title: '',
+      defaultImage: 'categorias04.png',
       hoverImage: '/api/placeholder/300/400',
       hoverText: 'Vibrantes y duraderos'
     },
     {
       id: 'mezclas',
-      title: 'Mezclas',
-      defaultImage: '/mezclasBoton.png',
+      title: '',
+      defaultImage: '/categorias02.png',
       hoverImage: '/api/placeholder/300/400',
       hoverText: 'Combinaciones perfectas'
     },
     {
       id: 'moldes',
-      title: 'Moldes para repostería',
-      defaultImage: '/moldesBoton.jpg',
+      title: '',
+      defaultImage: '/categorias03.png',
       hoverImage: '/api/placeholder/300/400',
       hoverText: 'Formas increíbles'
     },
     {
       id: 'lacas',
-      title: 'Lacas alumínicas',
-      defaultImage: '/lacasBoton.jpg',
+      title: '',
+      defaultImage: '/categorias01.png',
       hoverImage: '/api/placeholder/300/400',
       hoverText: 'Brillos metálicos'
     }
