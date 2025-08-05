@@ -23,7 +23,7 @@ export const Productos = () => {
       defaultImage: '/categorias05.png',
       hoverImage: '/api/placeholder/300/400',
       hoverText: 'Mejora tus mezclas',
-      hasHoverEffect: true // Solo aditivos tendrán hover
+      hasHoverEffect: false
     },
     {
       id: 'colores',
@@ -62,36 +62,36 @@ export const Productos = () => {
   // Array de productos de aditivos
   const aditivosProducts = [
     { 
-      name: 'Laca DC Amarillo #6', 
-      image: '/lacasBoton.jpg', 
-      hoverImage: '/api/placeholder/200/200',
+      name: 'Conservadores', 
+      image: '/aditivo1.png', 
+      hoverImage: '/',
       hoverText: 'Aditivo premium para mejores resultados',
       hasHoverEffect: true
     },
     { 
-      name: 'Laca DC Amarillo #6', 
-      image: '/api/placeholder/200/200', 
+      name: 'Estabilizantes, Espesantes y Emulsionates', 
+      image: '/aditivos3.png', 
       hoverImage: '/api/placeholder/200/200',
       hoverText: 'Calidad superior garantizada',
       hasHoverEffect: true
     },
     { 
-      name: 'Laca DC Amarillo #6', 
-      image: '/api/placeholder/200/200', 
+      name: 'Acidulantes y Reguladores de Acides', 
+      image: '/aditivos5.png', 
       hoverImage: '/api/placeholder/200/200',
       hoverText: 'Fórmula especializada',
       hasHoverEffect: true
     },
     { 
-      name: 'Laca DC Amarillo #6', 
-      image: '/api/placeholder/200/200', 
+      name: 'Mejoradores de Sabor', 
+      image: '/aditivos2.png', 
       hoverImage: '/api/placeholder/200/200',
       hoverText: 'Rendimiento excepcional',
       hasHoverEffect: true
     },
     { 
-      name: 'Laca DC Amarillo #6', 
-      image: '/api/placeholder/200/200', 
+      name: 'Leudantes y Agentes de Textura', 
+      image: '/aditivos4.png', 
       hoverImage: '/api/placeholder/200/200',
       hoverText: 'Innovación en cada gota',
       hasHoverEffect: true
@@ -152,7 +152,7 @@ export const Productos = () => {
     
     return (
       <div
-        className={`relative bg-gray-400 cursor-pointer group transition-all duration-300 ${className} ${
+        className={`relative bg-pink-500 cursor-pointer group transition-all duration-300 ${className} ${
           !shouldHaveHover ? 'hover:scale-105 hover:shadow-xl hover:z-10' : ''
         }`}
         onMouseEnter={() => shouldHaveHover ? setHoveredCard(cardId) : null}
@@ -160,22 +160,26 @@ export const Productos = () => {
         onClick={onClick}
       >
         {/* Contenedor de la imagen del producto */}
-        <div className="absolute inset-0 overflow-hidden">
-          <img 
-            src={isHovered && shouldHaveHover ? product.hoverImage : (product.defaultImage || product.image)}
-            alt={product.title || product.name}
-            className={`w-full h-full object-cover transition-all duration-300 ${
-              applyDarkFilter ? 'opacity-80' : ''
-            } ${!shouldHaveHover ? 'group-hover:scale-110' : ''}`}
-          />
-        </div>
+<div className="absolute inset-0 overflow-hidden">
+  <img 
+    src={isHovered && shouldHaveHover ? product.hoverImage : (product.defaultImage || product.image)}
+    alt={product.title || product.name}
+    className={`w-full h-full object-cover transition-all duration-300 ${
+      !shouldHaveHover ? 'group-hover:scale-110' : ''
+    }`}
+  />
+
+  {applyDarkFilter && (
+    <div className="absolute inset-0 bg-black/50 z-10"></div> // Overlay oscuro
+  )}
+</div>
 
         {/* Texto mostrado cuando NO hay hover O cuando no tiene efecto hover */}
         {(!isHovered || !shouldHaveHover) && (
           <div className={`absolute inset-0 flex items-center justify-center z-10 transition-all duration-300 ${
             !shouldHaveHover ? 'group-hover:bg-black/20' : ''
           }`}>
-            <h3 className={`text-white font-medium text-center px-4 transition-all duration-300 ${
+            <h3 className={`text-slate-100 lato-regular text-3xl text-center px-4 transition-all duration-300 ${
               !shouldHaveHover ? 'group-hover:text-lg group-hover:font-bold' : ''
             }`}>
               {product.title || product.name}
@@ -208,8 +212,8 @@ export const Productos = () => {
         </div>
         {/* Encabezado de la página */}
         <header className="text-center py-10 px-8">
-          <h1 className="mb-4 text-4xl sm:text-5xl lg:text-6xl font-bold" style={{ color: 'rgb(23, 99, 141)' }}>
-            Conoce nuestros <span style={{ color: 'rgb(203, 6, 124)' }}>productos</span>
+          <h1 className="mb-4 text-4xl sm:text-5xl lg:text-6xl font-bold lato-regular" style={{ color: 'rgb(23, 99, 141)' }}>
+            Conoce nuestros <span className='font-bold' style={{ color: 'rgb(203, 6, 124)' }}>productos</span>
           </h1>
           <p className="text-2xl" style={{ color: 'rgb(23, 99, 141)' }}>
             Selecciona directamente el elemento que buscas
@@ -231,31 +235,31 @@ export const Productos = () => {
             ))}
           </div>
           <div className="text-center py-8">
-            <p className="text-2xl " style={{ color: 'rgb(23, 99, 141)' }}>
+            <p className="text-2xl lato-regular" style={{ color: 'rgb(23, 99, 141)' }}>
               O sigue bajando para explorar todos nuestros productos
             </p>
           </div>
         </section>
 
         {/* Sección de Aditivos (CON hover effect) */}
-<section id="section-aditivos" className="w-full mb-10">
-  <div className="bg-[url('/marcoColores.png')] bg-cover bg-center py-4 px-10 text-right h-[181px]">
-    <h1 className="font-semibold mb-4 text-5xl sm:text-5xl lg:text-6xl" style={{ color: 'rgb(203, 6, 124)' }}>
+<section id="section-aditivos" className="w-full mb-9">
+  <div className="bg-[url('/marcoColores1.png')] bg-cover bg-center py-4 px-10 text-right h-[170px] ">
+    <h1 className="tracking-tight lato-normal text-7xl sm:text-5xl lg:text-7xl" style={{ color: 'rgb(203, 6, 124)' }}>
       Aditivos
     </h1>
-    <p className="text-3xl" style={{ color: 'rgb(23, 99, 141)' }}>
+    <p className="ato-regular text-4xl mb-4" style={{ color: 'rgb(23, 99, 141)' }}>
       El plus para tu producto
     </p>
   </div>
   
   {/* Grid principal con 2 columnas */}
-  <div className="grid grid-cols-2 h-64">
+  <div className="grid grid-cols-2 h-100">
     {/* Columna izquierda - 2 filas */}
     <div className="grid grid-rows-2 gap-0">
       <ProductCard
         product={aditivosProducts[0]} // Conservadores
         cardId="aditivo-0"
-        className="h-full"
+        className="h-full bg-black/10 absolute inset-0 "
         applyDarkFilter={true}
       />
       <ProductCard
@@ -267,16 +271,9 @@ export const Productos = () => {
     </div>
     
     {/* Columna derecha - 2 filas */}
-    <div className="grid grid-rows-2 gap-0">
-      <ProductCard
-        product={aditivosProducts[2]} // Mejoradores de sabor
-        cardId="aditivo-2"
-        className="h-full"
-        applyDarkFilter={true}
-      />
-      
-      {/* Fila inferior dividida en 2 columnas */}
-      <div className="grid grid-cols-2 gap-0">
+    <div className="grid grid-rows-2 gap-0 ">
+            {/* Fila inferior dividida en 2 columnas */}
+      <div className="grid grid-cols-2 gap-0 ">
         <ProductCard
           product={aditivosProducts[3]} // Leudantes y agentes de textura
           cardId="aditivo-3"
@@ -290,16 +287,28 @@ export const Productos = () => {
           applyDarkFilter={true}
         />
       </div>
+      <ProductCard
+        product={aditivosProducts[2]} // Mejoradores de sabor
+        cardId="aditivo-2"
+        className="h-full"
+        applyDarkFilter={true}
+      />
+      
+
     </div>
   </div>
 </section>
 
         {/* Sección de Colores Primarios (CON hover effect) */}
         <section id="section-colores" className="w-full mb-10">
-          <div className="bg-gray-300 py-4 px-8 text-right">
-            <h2 className="text-2xl font-bold text-gray-800">Colores primarios</h2>
-            <p className="text-gray-600">El plus para tu producto</p>
-          </div>
+  <div className="bg-[url('/marcoColores1.png')] bg-cover bg-center py-4 px-10 text-right h-[170px] ">
+    <h1 className="tracking-tight lato-normal text-7xl sm:text-5xl lg:text-7xl" style={{ color: 'rgb(203, 6, 124)' }}>
+      Colores Primarios
+    </h1>
+    <p className="ato-regular text-4xl mb-4" style={{ color: 'rgb(23, 99, 141)' }}>
+      El plus para tu producto
+    </p>
+  </div>
           <div className="grid grid-cols-3 h-40">
             {coloresPrimarios.map((color, index) => (
               <ProductCard 
@@ -315,10 +324,14 @@ export const Productos = () => {
 
         {/* Sección de Lacas Alumínicas (SIN hover effect) */}
         <section id="section-lacas" className="w-full mb-10">
-          <div className="bg-gray-300 py-4 px-8 text-right">
-            <h2 className="text-2xl font-bold text-gray-800">Lacas alumínicas</h2>
-            <p className="text-gray-600">El plus para tu producto</p>
-          </div>
+  <div className="bg-[url('/marcoColores1.png')] bg-cover bg-center py-4 px-10 text-right h-[170px] ">
+    <h1 className="tracking-tight lato-normal text-7xl sm:text-5xl lg:text-7xl" style={{ color: 'rgb(203, 6, 124)' }}>
+      Lacas Alumínicas
+    </h1>
+    <p className="ato-regular text-4xl mb-4" style={{ color: 'rgb(23, 99, 141)' }}>
+      Disolver con grasas y aceites
+    </p>
+  </div>
           <div className="grid grid-cols-4 grid-rows-2 h-80">
             {lacasAluminicas.map((laca, index) => (
               <ProductCard 
@@ -334,10 +347,14 @@ export const Productos = () => {
 
         {/* Sección de Mezclas */}
         <section id="section-mezclas" className="w-full mb-10">
-          <div className="bg-gray-300 py-4 px-8 text-right">
-            <h2 className="text-2xl font-bold text-gray-800">Mezclas</h2>
-            <p className="text-gray-600">El plus para tu producto</p>
-          </div>
+  <div className="bg-[url('/marcoColores1.png')] bg-cover bg-center py-4 px-10 text-right h-[170px] ">
+    <h1 className="tracking-tight lato-normal text-7xl sm:text-5xl lg:text-7xl" style={{ color: 'rgb(203, 6, 124)' }}>
+      Mezclas
+    </h1>
+    <p className="ato-regular text-4xl mb-4" style={{ color: 'rgb(23, 99, 141)' }}>
+      Mezclamos cada color y laca que necesites
+    </p>
+  </div>
           <div className="relative py-8 text-center h-42 bg-cover bg-center opacity-80" style={{backgroundImage: 'url(/mezclas.png)'}}>
             <div className="relative z-10">
               <h3 className="text-xl font-medium text-white mb-2">
@@ -352,10 +369,14 @@ export const Productos = () => {
 
         {/* Sección de Especialidades (SIN hover effect) */}
         <section id="section-moldes" className="w-full mb-10">
-          <div className="bg-gray-300 py-4 px-8 text-right">
-            <h2 className="text-2xl font-bold text-gray-800">Especialidades</h2>
-            <p className="text-gray-600">El plus para tu producto</p>
-          </div>
+  <div className="bg-[url('/marcoColores1.png')] bg-cover bg-center py-4 px-10 text-right h-[170px] ">
+    <h1 className="tracking-tight lato-normal  text-7xl sm:text-5xl lg:text-7xl" style={{ color: 'rgb(203, 6, 124)' }}>
+      Moldes para reposteria
+    </h1>
+    <p className="ato-regular text-4xl mb-4" style={{ color: 'rgb(23, 99, 141)' }}>
+      El plus para tu producto
+    </p>
+  </div>
           <div className="grid grid-cols-4 h-64">
             {especialidades.map((especialidad, index) => (
               <ProductCard 
