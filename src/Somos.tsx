@@ -18,12 +18,12 @@ const ImprovedSections = () => {
               </h1>
             </div>
 
-            <p className=" lato-regular text-black text-3xl max-w-lg">Comercializadora 100% mexicana que busca ofrecerte la mejor calidad en productos dentro de la rama alimenticia.</p>
+            <p className=" lato-regular text-black text-justify text-xl max-w-lg">Comercializadora 100% mexicana y de raíces familiares. PATYUBA se funda por la ingeniera Liz Patsy Garcia Calderón en el siglo XXI, distribuyendo materias primas en todos los estados de la república desde la Ciudad de México. Nacimos para cumplir con las necesidades del cliente con soluciones, calidad, precio, servicio y confianza. Nos comprometemos a que cada materia prima que distribuimos sea el complemento ideal para su producto terminado. </p>
 
 
             <div className="flex gap-6 flex-wrap">
 
-              <Link to="/Productos" className="bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105" >Descubre más</Link>
+              
 
 
               <a href="/PATYUBA.pdf" target="_blank" rel="noopener noreferrer" className="bg-gray-900 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:bg-gray-800 transition-all duration-300 hover:scale-105">
