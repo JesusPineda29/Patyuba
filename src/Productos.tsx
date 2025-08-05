@@ -8,9 +8,12 @@ export const Productos = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+      const navbarHeight = 80; // h-20 = 5rem = 80px
+      const elementPosition = element.offsetTop - navbarHeight;
+      
+      window.scrollTo({
+        top: elementPosition,
+        behavior: 'smooth'
       });
     }
   };
@@ -145,8 +148,7 @@ export const Productos = () => {
 
     return (
       <div
-        className={`relative bg-pink-500 cursor-pointer group transition-all duration-300 ${className} ${!shouldHaveHover ? 'hover:scale-105 hover:shadow-xl hover:z-10' : ''
-          }`}
+        className={`relative bg-pink-500 cursor-pointer group transition-all duration-300 ${className} hover:scale-105 hover:shadow-xl hover:z-10`}
         onMouseEnter={() => shouldHaveHover ? setHoveredCard(cardId) : undefined}
         onMouseLeave={() => shouldHaveHover ? setHoveredCard(null) : undefined}
         onClick={onClick || undefined}
@@ -156,20 +158,18 @@ export const Productos = () => {
           <img
             src={product.defaultImage || product.image}
             alt={product.title || product.name}
-            className={`w-full h-full object-cover transition-all duration-300 ${!shouldHaveHover ? 'group-hover:scale-110' : ''
-              }`}
+            className="w-full h-full object-cover transition-all duration-300 group-hover:scale-110"
           />
 
           {applyDarkFilter && (
-            <div className="absolute inset-0 bg-black/50 z-10"></div> // Overlay oscuro
+            <div className="absolute inset-0 bg-black/45 z-10"></div> // Overlay oscuro
           )}
         </div>
 
         {/* Texto mostrado cuando NO hay hover O cuando no tiene efecto hover */}
         {(!isHovered || !shouldHaveHover) && (
-          <div className={`absolute inset-0 flex items-center justify-center z-10 transition-all duration-300 ${!shouldHaveHover ? 'group-hover:bg-black/20' : ''
-            }`}>
-            <h3 className={`text-slate-100 lato-regular text-3xl text-center px-4 transition-all duration-300 ${!shouldHaveHover ? 'group-hover:text-lg group-hover:font-bold' : ''
+          <div className={`absolute inset-0 flex items-center justify-center z-10 transition-all duration-300 ${!shouldHaveHover ? 'group-hover:bg-black/20' : 'group-hover:bg-black/50'}`}>
+            <h3 className={`text-slate-100 lato-regular text-3xl text-center px-4 transition-all duration-300 ${!shouldHaveHover ? 'group-hover:text-4xl group-hover:font-bold' : ''
               }`}>
               {product.title || product.name}
             </h3>
@@ -178,7 +178,7 @@ export const Productos = () => {
 
         {/* Texto mostrado cuando SÍ hay hover (solo para tarjetas con hasHoverEffect: true) */}
         {isHovered && shouldHaveHover && product.hoverText && (
-          <div className="absolute inset-0 flex items-center justify-center z-10">
+          <div className="absolute inset-0 flex items-center justify-center z-10 bg-black/70">
             <div className="text-center px-4">
               <h3 className="text-white lato-regular mb-2 text-2xl">
                 {product.title || product.name}
@@ -384,3 +384,5 @@ export const Productos = () => {
 };
 
 export default Productos;
+
+
