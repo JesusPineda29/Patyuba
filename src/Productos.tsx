@@ -158,7 +158,7 @@ export const Productos = () => {
             ))}
           </div>
           {/* Texto separador entre secciones */}
-          <div className="text-center py-8 bg-gray-100">
+          <div className="text-center py-8 ">
             <p className="text-gray-600">
               O sigue bajando para explorar todos nuestros productos
             </p>
@@ -168,10 +168,12 @@ export const Productos = () => {
         {/* Sección de Aditivos (CON filtro) */}
         <section className="w-full mb-10">
           {/* Header de la sección */}
-          <div className="bg-gray-300 py-4 px-8 text-right">
-            <h2 className="text-2xl font-bold text-gray-800">Aditivos</h2>
-            <p className="text-gray-600">El plus para tu productooo</p>
-          </div>
+<div
+  className="bg-[url('/marcoColores.png')] bg-cover bg-center py-4 px-8 text-right h-[181px]"
+>
+  <h2 className="text-2xl font-bold ">Aditivos</h2>
+  <p className="">El plus para tu productooo</p>
+</div>
           {/* Grid de productos - 2 productos grandes + 3 pequeños en columna */}
           <div className="grid grid-cols-3 h-64">
             <ProductCard 
