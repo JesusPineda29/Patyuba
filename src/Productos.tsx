@@ -11,89 +11,144 @@ export const Productos = () => {
       title: '',
       defaultImage: '/categorias05.png',
       hoverImage: '/api/placeholder/300/400',
-      hoverText: 'Mejora tus mezclas'
+      hoverText: 'Mejora tus mezclas',
+      hasHoverEffect: true // Solo aditivos tendrán hover
     },
     {
       id: 'colores',
       title: '',
       defaultImage: 'categorias04.png',
       hoverImage: '/api/placeholder/300/400',
-      hoverText: 'Vibrantes y duraderos'
+      hoverText: 'Vibrantes y duraderos',
+      hasHoverEffect: false // Los colores principales no tienen hover aquí
     },
     {
       id: 'mezclas',
       title: '',
       defaultImage: '/categorias02.png',
       hoverImage: '/api/placeholder/300/400',
-      hoverText: 'Combinaciones perfectas'
+      hoverText: 'Combinaciones perfectas',
+      hasHoverEffect: false
     },
     {
       id: 'moldes',
       title: '',
       defaultImage: '/categorias03.png',
       hoverImage: '/api/placeholder/300/400',
-      hoverText: 'Formas increíbles'
+      hoverText: 'Formas increíbles',
+      hasHoverEffect: false
     },
     {
       id: 'lacas',
       title: '',
       defaultImage: '/categorias01.png',
       hoverImage: '/api/placeholder/300/400',
-      hoverText: 'Brillos metálicos'
+      hoverText: 'Brillos metálicos',
+      hasHoverEffect: false
     }
   ];
 
   // Array de productos de aditivos
   const aditivosProducts = [
-    { name: 'Laca DC Amarillo #6', image: '/lacasBoton.jpg', hoverImage: '/api/placeholder/200/200' },
-    { name: 'Laca DC Amarillo #6', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' },
-    { name: 'Laca DC Amarillo #6', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' },
-    { name: 'Laca DC Amarillo #6', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' },
-    { name: 'Laca DC Amarillo #6', image: '/api/placeholder/200/200', hoverImage: '/api/placeholder/200/200' }
+    { 
+      name: 'Laca DC Amarillo #6', 
+      image: '/lacasBoton.jpg', 
+      hoverImage: '/api/placeholder/200/200',
+      hoverText: 'Aditivo premium para mejores resultados',
+      hasHoverEffect: true
+    },
+    { 
+      name: 'Laca DC Amarillo #6', 
+      image: '/api/placeholder/200/200', 
+      hoverImage: '/api/placeholder/200/200',
+      hoverText: 'Calidad superior garantizada',
+      hasHoverEffect: true
+    },
+    { 
+      name: 'Laca DC Amarillo #6', 
+      image: '/api/placeholder/200/200', 
+      hoverImage: '/api/placeholder/200/200',
+      hoverText: 'Fórmula especializada',
+      hasHoverEffect: true
+    },
+    { 
+      name: 'Laca DC Amarillo #6', 
+      image: '/api/placeholder/200/200', 
+      hoverImage: '/api/placeholder/200/200',
+      hoverText: 'Rendimiento excepcional',
+      hasHoverEffect: true
+    },
+    { 
+      name: 'Laca DC Amarillo #6', 
+      image: '/api/placeholder/200/200', 
+      hoverImage: '/api/placeholder/200/200',
+      hoverText: 'Innovación en cada gota',
+      hasHoverEffect: true
+    }
   ];
 
   // Array de colores primarios
   const coloresPrimarios = [
-    { name: 'Azules', image: '/cp1.png', hoverImage: '/api/placeholder/300/150' },
-    { name: 'Rojos', image: '/cp2.png', hoverImage: '/api/placeholder/300/150' },
-    { name: 'Amarillos', image: '/cp3.png', hoverImage: '/api/placeholder/300/150' }
+    { 
+      name: 'Azules', 
+      image: '/cp1.png', 
+      hoverImage: '/api/placeholder/300/150',
+      hoverText: 'Tonalidades azules vibrantes',
+      hasHoverEffect: true
+    },
+    { 
+      name: 'Rojos', 
+      image: '/cp2.png', 
+      hoverImage: '/api/placeholder/300/150',
+      hoverText: 'Rojos intensos y duraderos',
+      hasHoverEffect: true
+    },
+    { 
+      name: 'Amarillos', 
+      image: '/cp3.png', 
+      hoverImage: '/api/placeholder/300/150',
+      hoverText: 'Amarillos brillantes y puros',
+      hasHoverEffect: true
+    }
   ];
 
-  // Array de lacas alumínicas
+  // Array de lacas alumínicas (SIN hover effect)
   const lacasAluminicas = [
-    { name: 'Laca DC Amarillo #5', image: '/lacas08.png', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca DC Amarillo #6', image: '/lacas07.png', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca Rojo #3', image: '/lacas06.png', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca Rojo #5', image: '/lacas05.png', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca Rojo #6', image: '/lacas04.png', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca Rojo #40', image: '/lacas03.png', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca Azul #1', image: '/lacas02.png', hoverImage: '/api/placeholder/150/150' },
-    { name: 'Laca Azul #2', image: '/lacas01.png', hoverImage: '/api/placeholder/150/150' }
+    { name: 'Laca DC Amarillo #5', image: '/lacas08.png', hasHoverEffect: false },
+    { name: 'Laca DC Amarillo #6', image: '/lacas07.png', hasHoverEffect: false },
+    { name: 'Laca Rojo #3', image: '/lacas06.png', hasHoverEffect: false },
+    { name: 'Laca Rojo #5', image: '/lacas05.png', hasHoverEffect: false },
+    { name: 'Laca Rojo #6', image: '/lacas04.png', hasHoverEffect: false },
+    { name: 'Laca Rojo #40', image: '/lacas03.png', hasHoverEffect: false },
+    { name: 'Laca Azul #1', image: '/lacas02.png', hasHoverEffect: false },
+    { name: 'Laca Azul #2', image: '/lacas01.png', hasHoverEffect: false }
   ];
 
-  // Array de especialidades
+  // Array de especialidades (SIN hover effect)
   const especialidades = [
-    { name: 'Caramelos', image: '/moldes04.png', hoverImage: '/api/placeholder/200/200' },
-    { name: 'Chocolates', image: 'moldes02.png', hoverImage: '/api/placeholder/200/200' },
-    { name: 'Pasteles', image: '/moldes03.png', hoverImage: '/api/placeholder/200/200' },
-    { name: 'Galletas', image: '/moldes01.png', hoverImage: '/api/placeholder/200/200' }
+    { name: 'Caramelos', image: '/moldes04.png', hasHoverEffect: false },
+    { name: 'Chocolates', image: 'moldes02.png', hasHoverEffect: false },
+    { name: 'Pasteles', image: '/moldes03.png', hasHoverEffect: false },
+    { name: 'Galletas', image: '/moldes01.png', hasHoverEffect: false }
   ];
 
   // Componente reutilizable para mostrar cada tarjeta de producto
   const ProductCard = ({ product, cardId, className = "", applyDarkFilter = false }) => {
     // Verifica si esta tarjeta específica está siendo hovereada
     const isHovered = hoveredCard === cardId;
+    // Verifica si esta tarjeta debe tener efecto hover
+    const shouldHaveHover = product.hasHoverEffect;
     
     return (
       <div
         className={`relative bg-gray-400 cursor-pointer group transition-all duration-300 ${className}`}
-        onMouseEnter={() => setHoveredCard(cardId)} // Establece esta tarjeta como hovereada
-        onMouseLeave={() => setHoveredCard(null)}   // Quita el estado de hover
+        onMouseEnter={() => shouldHaveHover ? setHoveredCard(cardId) : null}
+        onMouseLeave={() => shouldHaveHover ? setHoveredCard(null) : null}
       >
         {/* Contenedor de la imagen del producto */}
         <div className="absolute inset-0">
           <img 
-            src={isHovered ? product.hoverImage : (product.defaultImage || product.image)}
+            src={isHovered && shouldHaveHover ? product.hoverImage : (product.defaultImage || product.image)}
             alt={product.title || product.name}
             className={`w-full h-full object-cover transition-opacity duration-300 ${
               applyDarkFilter ? 'opacity-80' : ''
@@ -101,8 +156,8 @@ export const Productos = () => {
           />
         </div>
 
-        {/* Texto mostrado cuando NO hay hover */}
-        {!isHovered && (
+        {/* Texto mostrado cuando NO hay hover O cuando no tiene efecto hover */}
+        {(!isHovered || !shouldHaveHover) && (
           <div className="absolute inset-0 flex items-center justify-center z-10">
             <h3 className="text-white font-medium text-center px-4">
               {product.title || product.name}
@@ -110,8 +165,8 @@ export const Productos = () => {
           </div>
         )}
 
-        {/* Texto mostrado cuando SÍ hay hover (solo si existe hoverText) */}
-        {isHovered && product.hoverText && (
+        {/* Texto mostrado cuando SÍ hay hover (solo para tarjetas con hasHoverEffect: true) */}
+        {isHovered && shouldHaveHover && product.hoverText && (
           <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="text-center px-4">
               <h3 className="text-white font-medium mb-2">
@@ -135,17 +190,16 @@ export const Productos = () => {
         </div>
         {/* Encabezado de la página */}
         <header className="text-center py-10 px-8">
-
-          <h1 className="   mb-4 text-4xl sm:text-5xl lg:text-6xl font-bold" style={{ color: 'rgb(23, 99, 141)' }}>
+          <h1 className="mb-4 text-4xl sm:text-5xl lg:text-6xl font-bold" style={{ color: 'rgb(23, 99, 141)' }}>
             Conoce nuestros <span style={{ color: 'rgb(203, 6, 124)' }}>productos</span>
           </h1>
-          <p className="text-2xl " style={{ color: 'rgb(23, 99, 141)' }}>
+          <p className="text-2xl" style={{ color: 'rgb(23, 99, 141)' }}>
             Selecciona directamente el elemento que buscas
           </p>
         </header>
 
-        {/* Sección de categorías principales - Grid de 5 columnas (SIN filtro) */}
-        <section className="w-full ">
+        {/* Sección de categorías principales - Grid de 5 columnas */}
+        <section className="w-full">
           <div className="grid grid-cols-5 h-140">
             {mainCategories.map((category, index) => (
               <ProductCard 
@@ -153,75 +207,65 @@ export const Productos = () => {
                 product={category}
                 cardId={`main-${category.id}`}
                 className="h-full"
-                applyDarkFilter={false} // Sin filtro
+                applyDarkFilter={false}
               />
             ))}
           </div>
-          {/* Texto separador entre secciones */}
-          <div className="text-center py-8 ">
+          <div className="text-center py-8">
             <p className="text-gray-600">
               O sigue bajando para explorar todos nuestros productos
             </p>
           </div>
         </section>
 
-        {/* Sección de Aditivos (CON filtro) */}
+        {/* Sección de Aditivos (CON hover effect) */}
         <section className="w-full mb-10">
-          {/* Header de la sección */}
-<div
-  className="bg-[url('/marcoColores.png')] bg-cover bg-center py-4 px-8 text-right h-[181px]"
->
-  <h2 className="text-2xl font-bold ">Aditivos</h2>
-  <p className="">El plus para tu productooo</p>
-</div>
-          {/* Grid de productos - 2 productos grandes + 3 pequeños en columna */}
+          <div className="bg-[url('/marcoColores.png')] bg-cover bg-center py-4 px-8 text-right h-[181px]">
+            <h2 className="text-2xl font-bold">Aditivos</h2>
+            <p>El plus para tu producto</p>
+          </div>
           <div className="grid grid-cols-3 h-64">
             <ProductCard 
               product={aditivosProducts[0]}
               cardId="aditivo-0"
               className="h-full"
-              applyDarkFilter={true} // Con filtro
+              applyDarkFilter={true}
             />
             <ProductCard 
               product={aditivosProducts[1]}
               cardId="aditivo-1"
               className="h-full"
-              applyDarkFilter={true} // Con filtro
+              applyDarkFilter={true}
             />
-            {/* Columna con 3 productos apilados verticalmente */}
-            
-            <div className="grid grid-cols-1 grid-rows-3 bg-black/60 w-full h-full ">
-              
+            <div className="grid grid-cols-1 grid-rows-3 bg-black/60 w-full h-full">
               <ProductCard 
                 product={aditivosProducts[2]}
                 cardId="aditivo-2"
                 className="h-full"
-                applyDarkFilter={true} // Con filtro
+                applyDarkFilter={true}
               />
               <ProductCard 
                 product={aditivosProducts[3]}
                 cardId="aditivo-3"
                 className="h-full"
-                applyDarkFilter={true} // Con filtro
+                applyDarkFilter={true}
               />
               <ProductCard 
                 product={aditivosProducts[4]}
                 cardId="aditivo-4"
                 className="h-full"
-                applyDarkFilter={true} // Con filtro
+                applyDarkFilter={true}
               />
             </div>
           </div>
         </section>
 
-        {/* Sección de Colores Primarios (CON filtro) */}
+        {/* Sección de Colores Primarios (CON hover effect) */}
         <section className="w-full mb-10">
-          {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Colores primarios</h2>
             <p className="text-gray-600">El plus para tu producto</p>
           </div>
-          {/* Grid de 3 columnas para los colores primarios */}
           <div className="grid grid-cols-3 h-40">
             {coloresPrimarios.map((color, index) => (
               <ProductCard 
@@ -229,20 +273,18 @@ export const Productos = () => {
                 product={color}
                 cardId={`color-${index}`}
                 className="h-full"
-                applyDarkFilter={true} // Con filtro
+                applyDarkFilter={true}
               />
             ))}
           </div>
         </section>
 
-        {/* Sección de Lacas Alumínicas (SIN filtro) */}
+        {/* Sección de Lacas Alumínicas (SIN hover effect) */}
         <section className="w-full mb-10">
-          {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Lacas alumínicas</h2>
             <p className="text-gray-600">El plus para tu producto</p>
           </div>
-          {/* Grid de 4 columnas x 2 filas para las lacas */}
           <div className="grid grid-cols-4 grid-rows-2 h-80">
             {lacasAluminicas.map((laca, index) => (
               <ProductCard 
@@ -250,22 +292,19 @@ export const Productos = () => {
                 product={laca}
                 cardId={`laca-${index}`}
                 className="h-full"
-                applyDarkFilter={false} // Sin filtro
+                applyDarkFilter={false}
               />
             ))}
           </div>
         </section>
 
-        {/* Sección de Mezclas (CON filtro) */}
+        {/* Sección de Mezclas */}
         <section className="w-full mb-10">
-          {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Mezclas</h2>
             <p className="text-gray-600">El plus para tu producto</p>
           </div>
-          {/* Contenido de mezclas - con filtro aplicado */}
-          <div className="relative  py-8 text-center h-42  bg-cover bg-center opacity-80" style={{backgroundImage: 'url(/mezclas.png)'}}>
-            {/* Contenido de texto */}
+          <div className="relative py-8 text-center h-42 bg-cover bg-center opacity-80" style={{backgroundImage: 'url(/mezclas.png)'}}>
             <div className="relative z-10">
               <h3 className="text-xl font-medium text-white mb-2">
                 Mezclas de colores y lacas
@@ -277,14 +316,12 @@ export const Productos = () => {
           </div>
         </section>
 
-        {/* Sección de Especialidades (CON filtro) */}
+        {/* Sección de Especialidades (SIN hover effect) */}
         <section className="w-full mb-10">
-          {/* Header de la sección */}
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Especialidades</h2>
             <p className="text-gray-600">El plus para tu producto</p>
           </div>
-          {/* Grid de 4 columnas para las especialidades */}
           <div className="grid grid-cols-4 h-64">
             {especialidades.map((especialidad, index) => (
               <ProductCard 
@@ -292,7 +329,7 @@ export const Productos = () => {
                 product={especialidad}
                 cardId={`especialidad-${index}`}
                 className="h-full"
-                applyDarkFilter={true} // Con filtro
+                applyDarkFilter={true}
               />
             ))}
           </div>
