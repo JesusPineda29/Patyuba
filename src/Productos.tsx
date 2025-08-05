@@ -4,6 +4,17 @@ export const Productos = () => {
   // Estado para controlar qué tarjeta está siendo hovereada
   const [hoveredCard, setHoveredCard] = useState(null);
 
+  // Función para hacer scroll suave a una sección específica
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   // Datos de las categorías principales - mostradas en la fila superior
   const mainCategories = [
     {
@@ -133,7 +144,7 @@ export const Productos = () => {
   ];
 
   // Componente reutilizable para mostrar cada tarjeta de producto
-  const ProductCard = ({ product, cardId, className = "", applyDarkFilter = false }) => {
+  const ProductCard = ({ product, cardId, className = "", applyDarkFilter = false, onClick = null }) => {
     // Verifica si esta tarjeta específica está siendo hovereada
     const isHovered = hoveredCard === cardId;
     // Verifica si esta tarjeta debe tener efecto hover
@@ -141,25 +152,32 @@ export const Productos = () => {
     
     return (
       <div
-        className={`relative bg-gray-400 cursor-pointer group transition-all duration-300 ${className}`}
+        className={`relative bg-gray-400 cursor-pointer group transition-all duration-300 ${className} ${
+          !shouldHaveHover ? 'hover:scale-105 hover:shadow-xl hover:z-10' : ''
+        }`}
         onMouseEnter={() => shouldHaveHover ? setHoveredCard(cardId) : null}
         onMouseLeave={() => shouldHaveHover ? setHoveredCard(null) : null}
+        onClick={onClick}
       >
         {/* Contenedor de la imagen del producto */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 overflow-hidden">
           <img 
             src={isHovered && shouldHaveHover ? product.hoverImage : (product.defaultImage || product.image)}
             alt={product.title || product.name}
-            className={`w-full h-full object-cover transition-opacity duration-300 ${
+            className={`w-full h-full object-cover transition-all duration-300 ${
               applyDarkFilter ? 'opacity-80' : ''
-            }`}
+            } ${!shouldHaveHover ? 'group-hover:scale-110' : ''}`}
           />
         </div>
 
         {/* Texto mostrado cuando NO hay hover O cuando no tiene efecto hover */}
         {(!isHovered || !shouldHaveHover) && (
-          <div className="absolute inset-0 flex items-center justify-center z-10">
-            <h3 className="text-white font-medium text-center px-4">
+          <div className={`absolute inset-0 flex items-center justify-center z-10 transition-all duration-300 ${
+            !shouldHaveHover ? 'group-hover:bg-black/20' : ''
+          }`}>
+            <h3 className={`text-white font-medium text-center px-4 transition-all duration-300 ${
+              !shouldHaveHover ? 'group-hover:text-lg group-hover:font-bold' : ''
+            }`}>
               {product.title || product.name}
             </h3>
           </div>
@@ -208,6 +226,7 @@ export const Productos = () => {
                 cardId={`main-${category.id}`}
                 className="h-full"
                 applyDarkFilter={false}
+                onClick={() => scrollToSection(`section-${category.id}`)}
               />
             ))}
           </div>
@@ -219,7 +238,7 @@ export const Productos = () => {
         </section>
 
         {/* Sección de Aditivos (CON hover effect) */}
-        <section className="w-full mb-10">
+        <section id="section-aditivos" className="w-full mb-10">
           <div className="bg-[url('/marcoColores.png')] bg-cover bg-center py-4 px-8 text-right h-[181px]">
             <h2 className="text-2xl font-bold">Aditivos</h2>
             <p>El plus para tu producto</p>
@@ -261,7 +280,7 @@ export const Productos = () => {
         </section>
 
         {/* Sección de Colores Primarios (CON hover effect) */}
-        <section className="w-full mb-10">
+        <section id="section-colores" className="w-full mb-10">
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Colores primarios</h2>
             <p className="text-gray-600">El plus para tu producto</p>
@@ -280,7 +299,7 @@ export const Productos = () => {
         </section>
 
         {/* Sección de Lacas Alumínicas (SIN hover effect) */}
-        <section className="w-full mb-10">
+        <section id="section-lacas" className="w-full mb-10">
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Lacas alumínicas</h2>
             <p className="text-gray-600">El plus para tu producto</p>
@@ -299,7 +318,7 @@ export const Productos = () => {
         </section>
 
         {/* Sección de Mezclas */}
-        <section className="w-full mb-10">
+        <section id="section-mezclas" className="w-full mb-10">
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Mezclas</h2>
             <p className="text-gray-600">El plus para tu producto</p>
@@ -317,7 +336,7 @@ export const Productos = () => {
         </section>
 
         {/* Sección de Especialidades (SIN hover effect) */}
-        <section className="w-full mb-10">
+        <section id="section-moldes" className="w-full mb-10">
           <div className="bg-gray-300 py-4 px-8 text-right">
             <h2 className="text-2xl font-bold text-gray-800">Especialidades</h2>
             <p className="text-gray-600">El plus para tu producto</p>
