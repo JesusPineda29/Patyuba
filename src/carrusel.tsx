@@ -1,10 +1,20 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const HeroCarousel = () => {
+  const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [direction, setDirection] = useState('next');
+
+  const handleProductosClick = () => {
+    navigate('/productos');
+    // Hacer scroll al inicio después de la navegación
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
 
   const slides = [
     {
@@ -12,7 +22,7 @@ const HeroCarousel = () => {
       title: "El color que necesita",
       subtitle: "PATYUBA se lo brinda",
       description: "Tu proveedor confiable de materias primas",
-      highlight: "Calidad y cumplimiento garantizados",
+      highlight: "Calidad y cumplimiento garantizados.",
       backgroundImage: "pinkHeroCut.png",
       buttonText: "Conoce nuestros productos"
     },
@@ -20,7 +30,7 @@ const HeroCarousel = () => {
       id: 2,
       title: "Servicio personalizado",
       subtitle: "para cada cliente",
-      description: "Experiencia y confianza en cada entrega",
+      description: "Experiencia y confianza en cada entrega.",
       highlight: "",
       backgroundImage: "/blueHeroCut.png",
       buttonText: "Conoce nuestros productos"
@@ -30,7 +40,7 @@ const HeroCarousel = () => {
       title: "Lo que necesitas,",
       subtitle: "como lo necesitas",
       description: "Soluciones adaptadas a tus necesidades",
-      highlight: "Asesoría técnica especializada",
+      highlight: "Asesoría técnica especializada.",
       backgroundImage: "redHeroCut.jpg",
       buttonText: "Conoce nuestros productos"
     },
@@ -38,25 +48,25 @@ const HeroCarousel = () => {
       id: 4,
       title: "Más que ingredientes,",
       subtitle: "te damos experiencias",
-      description: "Respondemos ágilmente a tus necesidades",
+      description: "Respondemos ágilmente a tus necesidades.",
       highlight: "",
       backgroundImage: "/greenHeroCut.png",
       buttonText: "Conoce nuestros productos"
     },
     {
       id: 5,
-      title: "Te damos más que ingredientes:",
-      subtitle: "te damos experiencias",
-      description: "Respondemos agilmente a tus necesidades",
+      title: "Trabajamos para ",
+      subtitle: "que tu producto brille",
+      description: "Precios justos y servicio que te acompaña.",
       highlight: "",
       backgroundImage: "/purpleHero.png",
       buttonText: "Conoce nuestros productos"
     },
     {
       id: 6,
-      title: "Te damos más que ingredientes:",
-      subtitle: "te damos experiencias",
-      description: "Respondemos agilmente a tus necesidades",
+      title: "Damos color",
+      subtitle: "y valor a tus ideas",
+      description: "Asesoría técnica especializada.",
       highlight: "",
       backgroundImage: "/yellowHero.jpg",
       buttonText: "Conoce nuestros productos"
@@ -163,12 +173,14 @@ const HeroCarousel = () => {
                 {slides[currentSlide].highlight}
               </p>
 
-              <button className={`bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-500 hover:scale-105 transform shadow-2xl hover:shadow-3xl ${isTransitioning
-                ? direction === 'next'
-                  ? 'opacity-0 transform translate-x-full'
-                  : 'opacity-0 transform -translate-x-full'
-                : 'opacity-100 transform translate-x-0'
-                }`} style={{ transitionDelay: '0.25s' }}>
+              <button 
+                onClick={handleProductosClick}
+                className={`bg-white text-gray-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all duration-500 hover:scale-105 transform shadow-2xl hover:shadow-3xl cursor-pointer ${isTransitioning
+                  ? direction === 'next'
+                    ? 'opacity-0 transform translate-x-full'
+                    : 'opacity-0 transform -translate-x-full'
+                  : 'opacity-100 transform translate-x-0'
+                  }`} style={{ transitionDelay: '0.25s' }}>
                 {slides[currentSlide].buttonText}
               </button>
             </div>
