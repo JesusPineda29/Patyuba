@@ -57,25 +57,27 @@ const PatyubaNavbar = () => {
   }, []);
 
   // Cerrar modal al hacer clic fuera
-useEffect(() => {
-  const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-    const target = (event.target as HTMLElement);
-    if (
-      isMenuOpen &&
-      !target.closest('.mobile-nav') &&
-      !target.closest('.menu-button')
-    ) {
-      setIsMenuOpen(false);
-    }
-  };
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent | TouchEvent) => {
+      const target = e.target as HTMLElement;
 
-  document.addEventListener('mousedown', handleClickOutside);
-  document.addEventListener('touchstart', handleClickOutside);
-  return () => {
-    document.removeEventListener('mousedown', handleClickOutside);
-    document.removeEventListener('touchstart', handleClickOutside);
-  };
-}, [isMenuOpen]);
+      if (
+        isMenuOpen &&
+        !target.closest('.mobile-nav') &&
+        !target.closest('.menu-button')
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isMenuOpen]);
 
 
   const navItems = [
@@ -87,8 +89,8 @@ useEffect(() => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${isScrolled
-        ? 'bg-gradient-to-l from-fuchsia-900 to-pink-700 backdrop-blur-md shadow-2xl border-b border-gray-200/20'
-        : 'bg-transparent'
+      ? 'bg-gradient-to-l from-fuchsia-900 to-pink-700 backdrop-blur-md shadow-2xl border-b border-gray-200/20'
+      : 'bg-transparent'
       }`}>
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 w-full">
@@ -111,16 +113,14 @@ useEffect(() => {
             />
             <div className="text-left">
               <div
-                className={`text-base font-bold transition-all duration-300 ${
-                  isScrolled ? "text-white" : "text-white"
-                } group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-500 group-hover:bg-clip-text group-hover:text-transparent`}
+                className={`text-base font-bold transition-all duration-300 ${isScrolled ? "text-white" : "text-white"
+                  } group-hover:bg-gradient-to-r group-hover:from-purple-600 group-hover:to-pink-500 group-hover:bg-clip-text group-hover:text-transparent`}
               >
                 COMERCIALIZADORA
               </div>
               <div
-                className={`text-2xl font-black transition-all duration-300 ${
-                  isScrolled ? "text-white" : "text-white"
-                } group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-red-500 group-hover:bg-clip-text group-hover:text-transparent`}
+                className={`text-2xl font-black transition-all duration-300 ${isScrolled ? "text-white" : "text-white"
+                  } group-hover:bg-gradient-to-r group-hover:from-pink-500 group-hover:to-red-500 group-hover:bg-clip-text group-hover:text-transparent`}
               >
                 PATYUBA
               </div>
@@ -136,8 +136,8 @@ useEffect(() => {
                   key={item.name}
                   onClick={() => handleNavigation(item.href)}
                   className={`relative px-6 py-3 text-sm font-semibold transition-all duration-300 rounded-full overflow-hidden group ${isScrolled
-                      ? 'text-white hover:text-white hover:bg-blue-900'
-                      : 'text-white/90 hover:text-white hover:bg-blue-900'
+                    ? 'text-white hover:text-white hover:bg-blue-900'
+                    : 'text-white/90 hover:text-white hover:bg-blue-900'
                     }`}
                 >
                   <span className="relative z-10 group-hover:drop-shadow-sm text-lg md:text-xl font-bold">
@@ -152,8 +152,8 @@ useEffect(() => {
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
                 className={`menu-button p-3 rounded-full transition-all duration-300 ${isScrolled
-                    ? 'text-gray-700 hover:bg-purple-100'
-                    : 'text-white hover:bg-white/20'
+                  ? 'text-white hover:bg-purple-100'
+                  : 'text-white hover:bg-white/20'
                   } hover:scale-110 backdrop-blur-sm`}
               >
                 {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -165,8 +165,10 @@ useEffect(() => {
         {/* Menú móvil */}
         <div className={`md:hidden transition-all duration-500 ease-in-out overflow-hidden ${isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
           }`}>
-          <div className={`mobile-nav px-2 pt-2 pb-6 space-y-1 ${isScrolled ? 'bg-white/95' : 'bg-black/20'
-            } backdrop-blur-md rounded-2xl mt-2 border border-white/10`}>
+          <div className={`mobile-nav px-2 pt-2 pb-6 space-y-1 ${isScrolled
+            ? 'bg-white/95'
+            : 'bg-gradient-to-br from-purple-900/95 to-pink-800/95'
+            } backdrop-blur-md rounded-2xl mt-2 border border-white/10 shadow-xl`}>
             {navItems.map((item, index) => (
               <button
                 key={item.name}
@@ -174,9 +176,9 @@ useEffect(() => {
                   handleNavigation(item.href);
                   setIsMenuOpen(false);
                 }}
-                className={`block px-6 py-4 text-base font-medium transition-all duration-300 rounded-xl overflow-hidden relative group ${isScrolled
-                    ? 'text-gray-700 hover:text-white hover:bg-purple-600'
-                    : 'text-white/90 hover:text-white hover:bg-purple-600'
+                className={`block w-full px-6 py-4 text-base font-medium transition-all duration-300 rounded-xl overflow-hidden relative group ${isScrolled
+                  ? 'text-gray-700 hover:text-white hover:bg-purple-600'
+                  : 'text-white/90 hover:text-white hover:bg-white/20'
                   }`}
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
