@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/sublime.png"
+                  src="/prismatiko.png"
                   alt="Logo del desarrollador"
                   className="w-40 object-contain hover:scale-105 transition-transform"
                 />
