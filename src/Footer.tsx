@@ -1,4 +1,4 @@
- import React from 'react'
+import React from 'react'
 
 const Footer: React.FC = () => {
   return (
@@ -7,20 +7,21 @@ const Footer: React.FC = () => {
         {/* Contenido principal del footer */}
         <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8 md:px-8">
           {/* Logo e ilustración */}
-          <div className="flex-shrink-0 md:ml-4">
+          <div className="flex-shrink-0 md:ml-4 mb-4 md:mb-0">
             <a href="#inicio" className="block">
-              <div className="flex flex-col items-start gap-3">
+              <div className="flex flex-col items-start gap-2">
                 <h2 className="text-lg font-semibold">PAT-YUBA</h2>
-                <div className="w-23 max-h-10">
+                <div className="w-20 max-h-10">
                   <img
                     src="/star.png"
                     alt="Estrella azul"
-                    className="w-full h-full object-contain"
+                    className="w-full h-auto object-contain"
                   />
                 </div>
               </div>
             </a>
           </div>
+
           {/* Dirección */}
           <div className="text-sm leading-6 flex-1 md:text-center">
             <p>Calle Anafre Mz 393, Lote 10.</p>
