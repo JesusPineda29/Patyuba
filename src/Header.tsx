@@ -24,7 +24,7 @@ const PatyubaNavbar = () => {
         }
       } else {
         // Si estamos en otra página, navegar a la página principal y luego hacer scroll
-        navigate(href);
+        navigate('/');
         setTimeout(() => {
           const sectionId = href.split('#')[1];
           const element = document.getElementById(sectionId);
@@ -39,8 +39,11 @@ const PatyubaNavbar = () => {
         }, 100);
       }
     } else {
-      // Para otros enlaces, navegar normalmente
+      // Para otros enlaces, navegar y hacer scroll al inicio
       navigate(href);
+      setTimeout(() => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 100);
     }
   };
 

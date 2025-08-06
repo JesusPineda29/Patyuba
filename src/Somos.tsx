@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
 const ImprovedSections = () => {
@@ -28,7 +28,7 @@ const ImprovedSections = () => {
               </h1>
             </div>
 
-            <p className=" lato-regular text-black text-justify text-xl max-w-lg">Comercializadora 100% mexicana y de raíces familiares. PATYUBA se funda por la ingeniera Liz Patsy Garcia Calderón en el siglo XXI, distribuyendo materias primas en todos los estados de la república desde la Ciudad de México. Nacimos para cumplir con las necesidades del cliente con soluciones, calidad, precio, servicio y confianza. Nos comprometemos a que cada materia prima que distribuimos sea el complemento ideal para su producto terminado. </p>
+            <p className=" lato-regular text-black text-justify text-xl max-w-lg">Comercializadora 100% mexicana y de raíces familiares. PATYUBA se funda por la Ingeniera Liz Patsy García Calderón en el siglo XXI, distribuyendo materias primas en todos los estados de la república desde la Ciudad de México. Nacimos para cumplir con las necesidades del cliente con soluciones, calidad, precio, servicio y confianza. Nos comprometemos a que cada materia prima que distribuimos sea el complemento ideal para su producto terminado. </p>
 
 
             <div className="flex gap-6 flex-wrap">
