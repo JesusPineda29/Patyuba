@@ -1,9 +1,48 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const PatyubaNavbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleNavigation = (href: string) => {
+    if (href === '/#somos' || href === '/#contacto') {
+      // Si estamos en la página principal, hacer scroll a la sección
+      if (location.pathname === '/') {
+        const sectionId = href.split('#')[1];
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const navbarHeight = 80; // h-20 = 5rem = 80px
+          const elementPosition = element.offsetTop - navbarHeight;
+          window.scrollTo({
+            top: elementPosition,
+            behavior: 'smooth'
+          });
+        }
+      } else {
+        // Si estamos en otra página, navegar a la página principal y luego hacer scroll
+        navigate(href);
+        setTimeout(() => {
+          const sectionId = href.split('#')[1];
+          const element = document.getElementById(sectionId);
+          if (element) {
+            const navbarHeight = 80;
+            const elementPosition = element.offsetTop - navbarHeight;
+            window.scrollTo({
+              top: elementPosition,
+              behavior: 'smooth'
+            });
+          }
+        }, 100);
+      }
+    } else {
+      // Para otros enlaces, navegar normalmente
+      navigate(href);
+    }
+  };
 
   // Detectar scroll
   useEffect(() => {
@@ -39,8 +78,8 @@ useEffect(() => {
   const navItems = [
     { name: 'INICIO', href: '/' },
     { name: 'PRODUCTOS', href: '/productos' },
-    { name: 'CONOCENOS', href: '#somos' },
-    { name: 'CONTACTO', href: '#contacto' }
+    { name: 'CONOCENOS', href: '/#somos' },
+    { name: 'CONTACTO', href: '/#contacto' }
   ];
 
   return (
@@ -90,9 +129,9 @@ useEffect(() => {
             {/* Menú desktop */}
             <div className="hidden md:flex items-baseline space-x-1">
               {navItems.map((item) => (
-                <a
+                <button
                   key={item.name}
-                  href={item.href}
+                  onClick={() => handleNavigation(item.href)}
                   className={`relative px-6 py-3 text-sm font-semibold transition-all duration-300 rounded-full overflow-hidden group ${isScrolled
                       ? 'text-white hover:text-white hover:bg-blue-900'
                       : 'text-white/90 hover:text-white hover:bg-blue-900'
@@ -101,7 +140,7 @@ useEffect(() => {
                   <span className="relative z-10 group-hover:drop-shadow-sm text-lg md:text-xl font-bold">
                     {item.name}
                   </span>
-                </a>
+                </button>
               ))}
             </div>
 
@@ -126,10 +165,12 @@ useEffect(() => {
           <div className={`mobile-nav px-2 pt-2 pb-6 space-y-1 ${isScrolled ? 'bg-white/95' : 'bg-black/20'
             } backdrop-blur-md rounded-2xl mt-2 border border-white/10`}>
             {navItems.map((item, index) => (
-              <a
+              <button
                 key={item.name}
-                href={item.href}
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => {
+                  handleNavigation(item.href);
+                  setIsMenuOpen(false);
+                }}
                 className={`block px-6 py-4 text-base font-medium transition-all duration-300 rounded-xl overflow-hidden relative group ${isScrolled
                     ? 'text-gray-700 hover:text-white hover:bg-purple-600'
                     : 'text-white/90 hover:text-white hover:bg-purple-600'
@@ -137,7 +178,7 @@ useEffect(() => {
                 style={{ transitionDelay: `${index * 0.1}s` }}
               >
                 <span className="relative z-10 text-lg font-bold">{item.name}</span>
-              </a>
+              </button>
             ))}
           </div>
         </div>

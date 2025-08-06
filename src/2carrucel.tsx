@@ -1,16 +1,25 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SimpleCarousel = () => {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [itemsPerView, setItemsPerView] = useState(4);
+
+  const handleProductosClick = () => {
+    navigate('/productos');
+    // Hacer scroll al inicio después de la navegación
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
 
   // Datos de ejemplo para el carrusel (máximo 8 productos)
   const carouselItems = [
     { id: 1, title: "Moldes de Reposteria", image: "/destacados01.png" },
     { id: 2, title: "Lacas", image: "/destacados02.png" },
-    { id: 3, title: "Conservadores", image: "/destacados03.png" },
+    { id: 3, title: "Aditivos", image: "/destacados03.png" },
     { id: 4, title: "Mejoradores de Sabor", image: "/destacados04.png" },
     { id: 5, title: "Colores Primarios", image: "/destacados05.png" },
     { id: 6, title: "Agentes de Textura", image: "/destacados06.png" },
@@ -72,8 +81,8 @@ const SimpleCarousel = () => {
 
 
   return (
-    <div className=" py-16  h-screen bg-cover bg-center" style={{ backgroundImage: "url('/destacados.png')" }}>
-      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8  flex flex-col justify-center">
+    <div className=" p-16  h-screen bg-cover bg-center" style={{ backgroundImage: "url('/destacados.png')" }}>
+      <div className=" max-w-8xl mx-auto px-4 sm:px-6 lg:px-8  flex flex-col justify-center">
         <div className="flex flex-col items-end text-right mb-8  lg:mb-12 pr-2 sm:pr-6 lg:pr-12">
           <p className="text-4xl sm:text-5xl lg:text-6xl font-bold  " style={{ color: 'rgb(23, 99, 141)' }}>
             Productos
@@ -138,7 +147,7 @@ const SimpleCarousel = () => {
                       <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
 
 
-                        <Link to="/productos" className="bg-sky-600 backdrop-blur-sm px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-opacity-30 transition-all">Ver más</Link>
+                        <button onClick={handleProductosClick} className="bg-sky-600 backdrop-blur-sm px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium hover:bg-opacity-30 transition-all">Ver más</button>
                       </div>
                     </div>
                   </div>

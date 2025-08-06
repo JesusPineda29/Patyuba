@@ -3,7 +3,7 @@ import { MapPin, Phone, Smartphone, MessageCircle, Mail, Send } from 'lucide-rea
 const SeccionContacto = () => {
     return (
         <section
-            className="backdrop-blur-xl border border-pink-200/50 rounded-3xl p-12 shadow-2xl shadow-pink-100/50 relative overflow-hidden"
+            className="backdrop-blur-xl border border-pink-200/50 p-12 shadow-2xl shadow-pink-100/50 relative overflow-hidden"
             style={{
                 backgroundImage: "url('contacto.jpg')",
                 backgroundSize: 'cover',
@@ -36,7 +36,7 @@ const SeccionContacto = () => {
                                 Información de Contacto
                             </h3>
 
-                            <div className="space-y-6">
+<div className="space-y-4">
                                 {/* Dirección */}
                                 <div className="group cursor-pointer">
                                     <div className="flex items-start space-x-4 p-4 rounded-2xl bg-gradient-to-r from-pink-100 to-rose-100 border border-pink-300/50 hover:border-pink-400/80 transition-all duration-300 hover:shadow-lg hover:shadow-pink-200/50">
@@ -59,16 +59,16 @@ const SeccionContacto = () => {
                                 {/* Teléfonos en grid */}
                                 <div className="grid md:grid-cols-2 gap-4">
                                     {/* Oficina */}
-                                    <a href="tel:5558325989" className="group">
-                                        <div className="flex flex-col items-center p-6 rounded-2xl bg-blue-500 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600 hover:scale-105">
-                                            <div className="bg-blue-700 p-4 rounded-xl shadow-md mb-4">
-                                                <Phone className="w-6 h-6 text-white" />
+                                    <a href="tel:2201388450" className="group">
+                                        <div className="flex flex-col items-center p-3 rounded-2xl bg-blue-500 transition-all duration-300 hover:shadow-xl hover:shadow-blue-600 hover:scale-105">
+                                            <div className="bg-blue-700 p-2 rounded-xl shadow-md mb-2">
+                                                <Phone className="w-4 h-4 text-white" />
                                             </div>
-                                            <h4 className="font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">
-                                                Oficina
+                                            <h4 className="font-bold text-white text-sm mb-1 group-hover:text-yellow-300 transition-colors">
+                                                Ventas
                                             </h4>
-                                            <p className="text-white font-semibold text-lg">
-                                                55 5832 5989
+                                            <p className="text-white font-semibold text-sm">
+                                                22 0138 8450
                                             </p>
                                         </div>
 
@@ -76,14 +76,14 @@ const SeccionContacto = () => {
 
                                     {/* Celular */}
                                     <a href="tel:5514958244" className="group">
-                                        <div className="flex flex-col items-center p-6 rounded-2xl bg-pink-400 transition-all duration-300 hover:shadow-xl hover:shadow-pink-700 hover:scale-105">
-                                            <div className="bg-pink-600 p-4 rounded-xl shadow-md mb-4">
-                                                <Smartphone className="w-6 h-6 text-white" />
+                                        <div className="flex flex-col items-center p-3 rounded-2xl bg-pink-400 transition-all duration-300 hover:shadow-xl hover:shadow-pink-700 hover:scale-105">
+                                            <div className="bg-pink-600 p-2 rounded-xl shadow-md mb-2">
+                                                <Smartphone className="w-4 h-4 text-white" />
                                             </div>
-                                            <h4 className="font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">
-                                                Celular
+                                            <h4 className="font-bold text-white text-sm mb-1 group-hover:text-yellow-300 transition-colors">
+                                                Teléfono
                                             </h4>
-                                            <p className="text-white font-semibold text-lg">
+                                            <p className="text-white font-semibold text-sm">
                                                 55 1495 8244
                                             </p>
                                         </div>
@@ -94,8 +94,8 @@ const SeccionContacto = () => {
                                 {/* WhatsApp y Email en grid */}
                                 <div className="grid md:grid-cols-2 gap-4">
                                     {/* WhatsApp */}
-                                    <a href="https://wa.me/5514958244" target="_blank" rel="noopener noreferrer" className="group">
-                                        <div className="flex flex-col items-center p-6 rounded-2xl bg-lime-500  transition-all duration-300 hover:shadow-xl hover:shadow-lime-700 hover:scale-105">
+                                    <a href="https://wa.me/5514958244" target="_blank" rel="noopener noreferrer" className="group h-full">
+                                        <div className="flex flex-col items-center justify-center p-6 rounded-2xl bg-lime-500 transition-all duration-300 hover:shadow-xl hover:shadow-lime-700 hover:scale-105 h-full">
                                             <div className="bg-lime-700 p-4 rounded-xl shadow-md mb-4">
                                                 <MessageCircle className="w-6 h-6 text-white" />
                                             </div>
@@ -109,21 +109,38 @@ const SeccionContacto = () => {
 
                                     </a>
 
-                                    {/* Email */}
-                                    <a href="mailto:ventas@patyuba.com" className="group">
-                                        <div className="flex flex-col items-center p-6 rounded-2xl bg-purple-500 border border-purple-700 hover:border-purple-800 transition-all duration-300 hover:shadow-xl hover:shadow-purple-700 hover:scale-105">
-                                            <div className="bg-purple-800 p-4 rounded-xl shadow-md mb-4">
-                                                <Mail className="w-6 h-6 text-white" />
+                                    {/* Email dividido en 2 botones */}
+                                    <div className="flex flex-col gap-4">
+                                        {/* Primer botón de email */}
+                                        <a href="mailto:ventas@patyuba.com" className="group flex-1">
+                                            <div className="flex flex-col items-center p-3 rounded-2xl bg-purple-500 border border-purple-700 hover:border-purple-800 transition-all duration-300 hover:shadow-xl hover:shadow-purple-700 hover:scale-105 h-full">
+                                                <div className="bg-purple-800 p-2 rounded-xl shadow-md mb-2">
+                                                    <Mail className="w-4 h-4 text-white" />
+                                                </div>
+                                                <h4 className="font-bold text-white text-sm mb-1 group-hover:text-yellow-300 transition-colors text-center">
+                                                    ventas@patyuba.com
+                                                </h4>
+                                                <p className="text-white font-semibold text-sm">
+                                                    Envía un correo
+                                                </p>
                                             </div>
-                                            <h4 className="font-bold text-white mb-2 group-hover:text-yellow-300 transition-colors">
-                                                ventas@patyuba.com
-                                            </h4>
-                                            <p className="text-white font-semibold text-lg">
-                                                Envía un correo
-                                            </p>
-                                        </div>
+                                        </a>
 
-                                    </a>
+                                        {/* Segundo botón de email */}
+                                        <a href="mailto:lizpatsy@patyuba.com" className="group flex-1">
+                                            <div className="flex flex-col items-center p-3 rounded-2xl bg-indigo-500 border border-indigo-700 hover:border-indigo-800 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-700 hover:scale-105 h-full">
+                                                <div className="bg-indigo-800 p-2 rounded-xl shadow-md mb-2">
+                                                    <Mail className="w-4 h-4 text-white" />
+                                                </div>
+                                                <h4 className="font-bold text-white text-sm mb-1 group-hover:text-yellow-300 transition-colors text-center">
+                                                    lizpatsy@patyuba.com
+                                                </h4>
+                                                <p className="text-white font-semibold text-sm">
+                                                    Envía un correo
+                                                </p>
+                                            </div>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>

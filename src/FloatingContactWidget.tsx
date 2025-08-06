@@ -55,7 +55,7 @@ const FloatingContactWidget = () => {
             Chatea por WhatsApp
           </a>
           <a
-            href="tel:+5558325989"
+            href="tel:+5514958244"
             className="bg-[rgb(191,62,62)] text-white  py-1.5 rounded-xl lato-regular text-center shadow hover:shadow-pink-200/50 hover:scale-105 transition-all duration-300"
           >
             Llamar Ahora

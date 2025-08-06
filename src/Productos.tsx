@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import ImprovedSections from './Somos';
-import SeccionContacto from './SeccionContacto ';
 
 export const Productos = () => {
   // Estado para controlar qué tarjeta está siendo hovereada
@@ -196,7 +194,7 @@ export const Productos = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white" id="top">
       <div className="w-full">
         <div>
           <h1 className='bg-pink-800 h-20'></h1>
@@ -380,12 +378,6 @@ export const Productos = () => {
             ))}
           </div>
         </section>
-
-        {/* Sección Somos */}
-        <ImprovedSections />
-
-        {/* Sección Contacto */}
-        <SeccionContacto />
       </div>
     </div>
   );

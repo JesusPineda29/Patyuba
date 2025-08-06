@@ -1,7 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 const ImprovedSections = () => {
+  const navigate = useNavigate();
+
+  const handleProductosClick = () => {
+    navigate('/productos');
+    // Hacer scroll al inicio después de la navegación
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }, 100);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50" id='somos'>
       {/* About Section */}
@@ -81,12 +91,12 @@ const ImprovedSections = () => {
       </p>
     </div>
     <div className="flex justify-center">
-      <Link
-        to="/Productos"
+      <button
+        onClick={handleProductosClick}
         className="bg-pink-500 hover:bg-pink-600 text-white px-10 py-4 rounded-full text-xl font-semibold shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-xl"
       >
         Click aquí
-      </Link>
+      </button>
     </div>
   </div>
 </section>

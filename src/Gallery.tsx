@@ -9,8 +9,8 @@ const Gallery = () => {
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
             <div className="absolute inset-0 p-6 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-2">Elegancia Oscura</h3>
-                <p className="text-white text-sm">Minimalismo sofisticado</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Amplia gama de mezclas y lacas</h3>
+                <p className="text-white text-sm">para cada necesidad.</p>
               </div>
             </div>
           </div>
@@ -23,8 +23,8 @@ const Gallery = () => {
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
             <div className="absolute inset-0 p-6 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-2">Naturaleza Vibrante</h3>
-                <p className="text-white/80 text-sm">Explorando paisajes únicos</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Comprometidos con la calidad </h3>
+                <p className="text-white/80 text-sm">en cada producto.</p>
               </div>
             </div>
           </div>
@@ -45,8 +45,8 @@ const Gallery = () => {
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
             <div className="absolute inset-0 p-6 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-2">Atardecer Cálido</h3>
-                <p className="text-white/80 text-sm">Colores que inspiran</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Nos importas:</h3>
+                <p className="text-white/80 text-sm">Atención calida y cercana siempre.</p>
               </div>
             </div>
           </div>
@@ -59,8 +59,8 @@ const Gallery = () => {
             <div className="absolute inset-0 bg-black opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
             <div className="absolute inset-0 p-6 flex flex-col justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-2">Pasión Ardiente</h3>
-                <p className="text-white/80 text-sm">Emociones intensas</p>
+                <h3 className="text-2xl font-bold text-white mb-2">Soluciones rapidas</h3>
+                <p className="text-white/80 text-sm">con un trato a tu medida. </p>
               </div>
             </div>
           </div>
