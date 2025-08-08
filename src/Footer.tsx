@@ -49,13 +49,13 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-3 text-base text-gray-400">
               <span>Sitio desarrollado por:</span>
               <a
-                href="prismatiko.com"
+                href="https://prismatiko.com"
                 className="flex items-center gap-2 hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
-                  src="/prismatiko.png"
+                  src="prismatiko.png"
                   alt="Logo del desarrollador"
                   className="w-30 object-contain hover:scale-105 transition-transform"
                 />

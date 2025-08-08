@@ -107,19 +107,21 @@ const SimpleCarousel = () => {
                     ></div>
 
                     {/* Contenido encima */}
-                    <div className="relative z-10 text-center">
-                      <h3 className="text-lg sm:text-xl md:text-2xl font-semibold px-4">
-                        {item.title}
-                      </h3>
-                      <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                        <button
-                          onClick={handleProductosClick}
-                          className="bg-sky-600 backdrop-blur-sm px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 rounded-full text-sm sm:text-base font-medium hover:bg-opacity-30 transition-all"
-                        >
-                          Ver más
-                        </button>
-                      </div>
-                    </div>
+<div className="relative z-10 text-center">
+  <div className="bg-black/50 px-3 py-1 rounded-md inline-block">
+    <h3 className="text-lg sm:text-xl md:text-2xl font-semibold">
+      {item.title}
+    </h3>
+  </div>
+  <div className="mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+    <button
+      onClick={handleProductosClick}
+      className="bg-sky-600 backdrop-blur-sm px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 rounded-full text-sm sm:text-base font-medium hover:bg-opacity-30 transition-all"
+    >
+      Ver más
+    </button>
+  </div>
+</div>
                   </div>
                 </div>
               ))}
