@@ -26,7 +26,7 @@ const ImprovedSections = () => {
 
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 sm:p-6 shadow-lg">
               <p className="lato-regular text-black text-justify text-sm sm:text-base md:text-lg lg:text-xl max-w-lg">
-                Comercializadora 100% mexicana y de raíces familiares. PATYUBA se funda por la Ingeniera Liz Patsy García Calderón en el siglo XXI, distribuyendo materias primas en todos los estados de la república desde la Ciudad de México. Nacimos para cumplir con las necesidades del cliente con soluciones, calidad, precio, servicio y confianza. Nos comprometemos a que cada materia prima que distribuimos sea el complemento ideal para su producto terminado.
+                Comercializadora 100% mexicana y de raíces familiares. PATYUBA se funda por la Directora Liz Patsy García Calderón en el siglo XXI, distribuyendo materias primas en todos los estados de la república desde la Ciudad de México. Nacimos para cumplir con las necesidades del cliente con soluciones, calidad, precio, servicio y confianza. Nos comprometemos a que cada materia prima que distribuimos sea el complemento ideal para su producto terminado.
               </p>
             </div>
 

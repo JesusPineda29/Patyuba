@@ -23,9 +23,9 @@ const Footer: React.FC = () => {
           </div>
 
           {/* Dirección */}
-          <div className="text-sm leading-6 flex-1 md:text-center">
-            <p>Calle Anafre Mz 393, Lote 10.</p>
-            <p>Col. Miguel De La Madrid</p>
+          <div className="text-sm leading-6 flex-1 md:text-center text-left">
+            <p>Calle Anafre Mz 393, Lote 10</p>
+            <p>Colonia Miguel De La Madrid</p>
             <p>C.P. 09698 Iztapalapa, CDMX</p>
           </div>
           {/* Contacto */}
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-3 text-base text-gray-400">
               <span>Sitio desarrollado por:</span>
               <a
-                href="#"
+                href="prismatiko.com"
                 className="flex items-center gap-2 hover:text-white transition-colors"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
                 <img
                   src="/prismatiko.png"
                   alt="Logo del desarrollador"
-                  className="w-40 object-contain hover:scale-105 transition-transform"
+                  className="w-30 object-contain hover:scale-105 transition-transform"
                 />
               </a>
             </div>

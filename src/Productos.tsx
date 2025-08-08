@@ -907,7 +907,7 @@ export const Productos = () => {
               Mezclas
             </h1>
             <p className="lato-regular text-4xl mb-4" style={{ color: 'rgb(23, 99, 141)' }}>
-              Mezclamos cada color y laca que necesites
+              Mezclamos lo que necesites
             </p>
           </div>
 
